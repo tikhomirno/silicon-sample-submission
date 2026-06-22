@@ -5,7 +5,7 @@
 .dir  <- dirname(normalizePath(sub("^--file=", "", .a[grep("^--file=", .a)])))
 .root <- dirname(.dir)
 suppressPackageStartupMessages(library(jsonlite))
-source(file.path(.dir, "clean_submission.R"))
+source(file.path(.dir, "lib", "clean_lib.R"))
 
 args <- commandArgs(trailingOnly = TRUE)
 if (length(args) < 1)

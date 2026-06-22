@@ -1,12 +1,13 @@
 ## ---------------------------------------------------------------------------
-## check_submission.R — self-assess a Silicon Sample Benchmark submission
+## check_lib.R — self-assess a Silicon Sample Benchmark submission
+## Library sourced by check.R (`make check`); not run directly.
 ##
 ## Checks a submission against the published spec: metadata.json schema, file
 ## naming, SHA-256 integrity, per-tier data structure / coverage, and value
 ## sanity. Every team can run this before depositing.
 ##
 ## Usage:
-##   source("check_submission.R")              # also sources submission_spec.R
+##   source("check_lib.R")                     # also sources submission_spec.R
 ##   check_submission("metadata.json", dir = ".")
 ##
 ## Returns (invisibly) a tibble of checks; prints a report and an overall
@@ -136,6 +137,10 @@ check_repo <- function(root = ".") {
       is_example <- identical(m$team_id, "example")
       warn(!is_example, "team_id set (not the example)",
            "still 'example' — edit metadata.json before submitting")
+      cr <- m$code_repository
+      warn(!is.null(cr) && nzchar(cr) && !grepl("your-team/your-repo", cr),
+           "code_repository set",
+           "link your generation code in metadata.json (code_repository / code_doi)")
     }
   }
   leftover <- list.files(file.path(root, "predictions"), pattern = "^example_.*\\.csv$")

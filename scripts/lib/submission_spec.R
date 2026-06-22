@@ -1,7 +1,7 @@
 ## ---------------------------------------------------------------------------
 ## submission_spec.R — canonical schema for Silicon Sample Benchmark submissions
 ##
-## Single source of truth shared by clean_submission.R, check_submission.R, and
+## Single source of truth shared by clean_lib.R, check_lib.R, and
 ## the example-data generator. Sourcing this file defines the `sst` list.
 ##
 ## Condition labels are the 16 text-intervention titles + "control", i.e. the

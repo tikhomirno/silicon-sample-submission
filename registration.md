@@ -64,6 +64,6 @@ sections (B) once per model. See the call's *Disclosure policy* for escrow rules
 - **H.1 Design-space search** — how the final pipeline was chosen: how many configurations tried, internal validation criterion, what data it ran against:
 
 ## I · Reproducibility & frozen artifacts
-- **I.1 Code & materials** — link/DOI, secrets removed, determinism/seeds documented:
+- **I.1 Code & materials** — link/DOI, secrets removed, determinism/seeds documented (also record the link in `metadata.json` → `code_repository` / `code_doi`):
 - **I.2 Raw output logs** — complete unprocessed model responses archived, hashed, time-stamped:
 - **I.3 Computational resources** — API-call counts, total tokens, cost, compute time:

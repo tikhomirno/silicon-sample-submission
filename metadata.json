@@ -7,6 +7,8 @@
   "approach_family": "per-respondent simulation, single model",
   "models": ["gpt-4o-mini-2024-07-18"],
   "registration_doi": "10.5281/zenodo.XXXXXXX",
+  "code_repository": "https://github.com/your-team/your-repo",
+  "code_doi": null,
   "disclosure_class": "A",
   "escrow_doi": null,
   "prediction_files": [

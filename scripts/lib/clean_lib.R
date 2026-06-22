@@ -1,5 +1,6 @@
 ## ---------------------------------------------------------------------------
-## clean_submission.R — turn a raw Tier-1 survey export into the target schema
+## clean_lib.R — turn a raw Tier-1 survey export into the target schema
+## Library sourced by clean.R (`make clean`); not run directly.
 ##
 ## The Silicon Sample Benchmark survey is the same Qualtrics instrument the human
 ## study uses. A raw export therefore carries Qualtrics variable names
@@ -11,7 +12,7 @@
 ## and returns a tibble in the Tier-1 submission schema.
 ##
 ## Usage:
-##   source("clean_submission.R")              # also sources submission_spec.R
+##   source("clean_lib.R")                     # also sources submission_spec.R
 ##   clean <- clean_submission("my_raw_export.csv", "vienna_T1_primary_v1.csv")
 ##
 ## Expected raw columns (Qualtrics labels): see the codebook on the website.
@@ -116,12 +117,25 @@ if (!exists("sst")) {
   )
 }
 
+## A real Qualtrics export carries two extra header rows under the column names
+## (the question text, then an {"ImportId":...} row) plus ~17 system columns.
+## Drop those metadata rows so a real export reads the same as a plain one; the
+## system columns fall away later via select(all_of(sst$tier1_required)).
+strip_qualtrics_header <- function(df) {
+  n_check <- min(2L, nrow(df))
+  if (n_check == 0L) return(df)
+  is_hdr <- vapply(seq_len(n_check), function(i)
+    any(grepl("ImportId", as.character(unlist(df[i, ])), fixed = TRUE)), logical(1))
+  if (any(is_hdr)) df[-seq_len(max(which(is_hdr))), , drop = FALSE] else df
+}
+
 clean_submission <- function(input, output = NULL) {
   raw <- if (is.data.frame(input)) input else
     readr::read_csv(input, col_types = cols(.default = col_character()),
                     show_col_types = FALSE)
 
-  d <- raw |> rename(any_of(.rename_map))
+  raw <- strip_qualtrics_header(raw)
+  d   <- raw |> rename(any_of(.rename_map))
 
   needed <- c("profile_id", "condition", "gender", "year_birth", "race",
               "education", "income", "party",

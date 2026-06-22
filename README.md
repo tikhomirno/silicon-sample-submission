@@ -35,14 +35,13 @@ Requires R with `tidyverse`, `jsonlite`, `digest`.
 
 | Path | Role |
 |---|---|
-| `metadata.json` | **edit** — machine-readable submission metadata |
+| `metadata.json` | **edit** — machine-readable submission metadata; include `code_repository` (and optional `code_doi`) linking the code that generated your predictions |
 | `registration.md` | **edit** — GUIDE-LLM-extended reporting checklist |
 | `predictions/` | **edit** — your prediction file(s); ships with one `example_*` per tier (delete them before depositing) |
 | `profiles/` | optional — drop your own `profiles.csv` here if you used custom profiles |
-| `survey/` | reference — `survey.qsf` (provided on invitation), `questionnaire.txt`, and `example_raw_export.csv` (a sample export to test `make clean`) |
+| `survey/` | reference — `survey.qsf` (Qualtrics import) and `survey.json` (same instrument, readable without Qualtrics) are the full instrument; `questionnaire.txt` is a plain-text rendering; `example_raw_export.csv` is a sample export to test `make clean` |
 | `codebook.csv` | reference — every variable: Qualtrics label → target label, wording, outcome |
-| `scripts/` | the engine — do not edit |
-| `build/` | maintainer generators — you can ignore |
+| `scripts/` | the engine you run — `check.R`, `clean.R`, and `lib/` internals; do not edit |
 
 ## Commands
 
@@ -61,14 +60,34 @@ Requires R with `tidyverse`, `jsonlite`, `digest`.
 
 `team_id` must match `metadata.json`. Coverage: 16 interventions + control, 13 outcomes. The exact
 column schema for each tier is enforced by `make check` (see the `example_*` files in `predictions/`
-and `scripts/submission_spec.R`).
+and `scripts/lib/submission_spec.R`).
 
 ## The survey
 
-The instrument is provided as `survey/survey.qsf` (import into Qualtrics) and as a plain-text
-rendering `survey/questionnaire.txt` (every item as `[label] question` + response values, plus the
-17 condition labels and the 16 intervention stimulus texts). Tier-1 runs export raw Qualtrics column
-names; `make clean` maps them to the analysis schema documented in `codebook.csv`.
+The full instrument is provided as two files. **Both encode the same survey**; they differ only in
+format and intended use:
+
+| | `survey/survey.qsf` | `survey/survey.json` |
+|---|---|---|
+| **What it is** | Qualtrics' proprietary survey-export file | Qualtrics' documented Survey-Definitions API output |
+| **Format** | JSON, but an undocumented proprietary structure | JSON with a documented schema (`result.Questions`, `result.Blocks`, `result.SurveyFlow`, …) |
+| **Best for** | re-importing into Qualtrics to **run** the survey yourself | **reading / parsing** the instrument programmatically — e.g. individual participant simulations that need the items, response scales, block/flow order, branching and randomization a respondent actually saw |
+| **Qualtrics license** | required (to import and run) | not required (it is plain JSON anyone can read) |
+
+In short: use `survey.qsf` if you want to *run* the survey in Qualtrics; use `survey.json`
+if you want to *read* it without a Qualtrics account.
+
+> **Scope note.** These files are the reduced *LLM-simulation* instrument: respondents are routed
+> through the non-interactive conditions only (assigned by a block randomizer); the interactive chatbot
+> arms have been removed. The conditions and outcomes you are scored on are defined in `codebook.csv`
+> and `scripts/lib/submission_spec.R`; treat those as authoritative for scope, and the two survey files as
+> the faithful record of the instrument.
+
+A human-readable rendering is also provided as `survey/questionnaire.txt` (every item as
+`[label] question` + response values, plus the condition labels and intervention stimulus texts).
+
+Tier-1 runs export raw Qualtrics column names; `make clean` maps them to the analysis schema
+documented in `codebook.csv`.
 
 ## More
 
