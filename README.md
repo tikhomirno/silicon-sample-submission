@@ -6,32 +6,91 @@ This repository **is** a submission to the [Silicon Sample Benchmark](https://ja
 a multi-team benchmark of AI approaches for predicting the results of a behavioral megastudy on
 trust in climate scientists, *before* the human data are revealed.
 
-Clone it (or click **“Use this template”** on GitHub), drop in your predictions, edit two files, run
-one check, and release it to Zenodo. The repo ships with a **random example submission** so a fresh
-clone is already valid — run `make check` to see the green target state, then replace it with your own.
+Clone it (or click **“Use this template”** on GitHub), drop in your predictions, edit two files, and
+release it to Zenodo. The repo ships with a **random example submission** so a fresh clone is already
+valid — replace it with your own.
 
 > The numbers in the example are random placeholders with **no real effects** — for format only.
 
+> **What we actually need from you:** (1) your **prediction file(s)** and (2) a completed
+> **`registration.md`**, released together (see *Deposit*). Everything else is in service of those two.
+> The `make` commands (`clean`, `manifest`, `check`) are **optional conveniences** — they help you
+> build and self-validate those files, but you may produce them however you like (e.g. your own
+> cleaning script driven by `codebook.csv`). We can’t guarantee that malformed submissions will be
+> scored, so running `make check` first is strongly recommended — but it is not required.
+
+## What counts as a submission
+
+**One submission = one entry = one repository = one Zenodo deposit.** An *entry* is one method’s
+complete set of predictions at a single tier; this repo holds exactly one, and its `metadata.json`
+describes that one entry.
+
+- **`primary` vs `secondary-k`** (the `entry` field in `metadata.json`) is *your own* ranking of your
+  entries. Label the entry you want scored as your headline result `primary`; label alternatives
+  `secondary-1`, `secondary-2`, … The organizers don’t assign this — you do.
+- **One tier per entry.** A repo is Tier 1 *or* 2 *or* 3; `metadata.json`’s `tier` and the prediction
+  file name(s) must agree. To predict at two tiers, that’s two entries.
+- **Submitting several entries** (a different method, model set, or tier): clone this template **once
+  per entry**, fill each in independently, deposit each to Zenodo, and email **all** the deposit DOIs
+  and file fingerprints together. Each entry being its own repo, entries may differ freely in tier and
+  disclosure class.
+
 ## Quickstart
 
-1.  **Get your own copy** — “Use this template” on GitHub, or `git clone` and re-init.
-2.  **Build predictions** with any AI-based approach (never any human outcome data). See the survey in
-    `survey/` and the variable dictionary in `codebook.csv`.
-3.  **Produce your file(s):**
-    - **Tier 1** (individual-level): drop your raw export into `raw_data_deposit/`, then run
-      `make clean` (see [Tier 1: clean your raw data](#tier-1-clean-your-raw-data) below).
-    - **Tier 2 / 3**: write the cell- or effect-level CSV(s) directly into `predictions/` (see the
-      matching `example_*` file already there).
-4.  **Edit `metadata.json`** (team, tier, models, disclosure class, …) and fill **`registration.md`**
-    (the reporting checklist; ★ items must be public).
-5.  **Delete the examples:** `predictions/` ships with one `example_*` file per tier so you can see
-    each format. Before depositing, **remove every `example_*` file** and leave only your own.
-6.  **Check it:** `make check` — fix anything it flags until it passes.
-7.  **Deposit:** release this repo to Zenodo and email the DOIs + SHA-256 hashes to the core team
-    **before the prediction lock (August 30, 2026)**.
+Your job, end to end: **predict** the study’s results with your AI approach, **package** those
+predictions into the file(s) this repo expects, **describe** how you made them, and **deposit** the
+repo to Zenodo before the lock. The steps below walk one entry through that; the engine
+(`make clean` / `make manifest` / `make check`) handles the mechanical parts.
 
-No `make`? Use `Rscript scripts/check.R` and `Rscript scripts/clean.R` (with the raw export in
-`raw_data_deposit/`). Requires R with `tidyverse`, `jsonlite`, `digest`.
+1.  **Get your own copy** — “Use this template” on GitHub, or `git clone` and re-init.
+
+2.  **See what you’re predicting.** Read the survey in `survey/` and the variable dictionary in
+    `codebook.csv`. You’re predicting **13 outcomes** across **17 conditions** (control + 16
+    interventions). Pick your **tier** — 1 = individual responses, 2 = per-condition cells, 3 = effects
+    vs. control — one tier per entry.
+
+3.  **Run your simulation.** Generate your predictions with any AI-based approach. You’re forecasting
+    **blind** — the human results aren’t revealed until after the lock — so your method must not seek
+    out or rely on any outcome data from this study (including pilots). You’ll attest to this in
+    `registration.md`. Everything else about how you get there is yours to design.
+
+4.  **Turn your output into the submission file(s):**
+
+    - **Tier 1 (individual-level).** Your simulation yields raw per-respondent answers in the survey’s
+      Qualtrics format. Drop that export into `raw_data_deposit/` and run **`make clean`** — it converts
+      the Qualtrics columns into the analysis-ready `predictions/<team_id>_T1_<entry>_v1.csv` and
+      fingerprints it. (`make clean` names the file after you, so set `team_id` and `entry` in
+      `metadata.json` first — the rest of the metadata can wait for step 5.) Full walkthrough:
+      [Tier 1: clean your raw data](#tier-1-clean-your-raw-data).
+    - **Tier 2 / 3.** Write the cell- or effect-level CSV(s) straight into `predictions/`, copying the
+      shape of the matching `example_*` file, then run **`make manifest`** to fingerprint them.
+
+5.  **Describe your method.** Complete `metadata.json` (models, disclosure class, `code_repository`, …)
+    and fill in `registration.md` (the reporting checklist; ★ items must be public).
+
+6.  **Swap out the examples.** Delete every `example_*` file in `predictions/` and the shipped
+    `raw_data_deposit/example_raw_export.csv`, leaving only your own — then re-run `make manifest`.
+
+7.  **Check it.** Run **`make check`** and fix anything it flags until it passes.
+
+8.  **Deposit (GitHub release → Zenodo).** Connect the repo to Zenodo once (Zenodo → log in with
+    GitHub → flip your repository **on**), then publish a **GitHub release**. Zenodo automatically
+    archives that release and mints a **DOI** for it — see Zenodo’s guide,
+    [Archiving a GitHub release](https://help.zenodo.org/docs/github/archive-software/github-upload/).
+    That released snapshot — your predictions, `metadata.json`, and `registration.md` together — **is**
+    your registration. Do it **before the prediction lock (August 30, 2026)** and email the DOI + your
+    file fingerprints (already recorded in `metadata.json`) to the core team. Submitting several
+    entries? Each is its own repo / release / DOI — send all the DOIs together.
+
+    > The DOI is created *by* the release, so it can’t already be inside the released files — that’s
+    > fine, you email it (step 9 records it back, optionally).
+
+9.  **Record your DOI in the repo (optional).** After the release, copy your Zenodo **DOI** (the
+    permanent **concept DOI**, “Cite all versions”, is the stable one) into the `zenodo_doi` field of
+    `metadata.json` and commit/push it — no new release needed; this just records the DOI in your
+    repository for reference. (The snapshot Zenodo already archived won’t include this later edit,
+    which is fine — that DOI identifies the snapshot regardless.) Not required for scoring — emailing
+    the DOI in step 8 is enough.
 
 ## What you edit vs. what ships
 
@@ -43,14 +102,42 @@ No `make`? Use `Rscript scripts/check.R` and `Rscript scripts/clean.R` (with the
 | `raw_data_deposit/` | **edit (Tier 1 only)** — drop your raw Qualtrics export here, then `make clean`; ships with `example_raw_export.csv` (delete it before depositing) |
 | `survey/` | reference — `survey.qsf` (Qualtrics import) and `survey.json` (same instrument, readable without Qualtrics) are the full instrument; `questionnaire.txt` is a plain-text rendering |
 | `codebook.csv` | reference — every variable: Qualtrics label → target label, wording, and response options |
-| `scripts/` | the engine you run — `check.R`, `clean.R`, and `lib/` internals; do not edit |
+| `scripts/` | the engine you run — `check.R`, `clean.R`, `manifest.R`, and `lib/` internals; do not edit |
 
 ## Commands
 
+These are **optional helpers**, not a required pipeline. They exist so you can produce and
+self-validate your files quickly; if you’d rather generate your prediction file(s) your own way from
+`codebook.csv`, that’s completely fine — just make sure the result matches the format the benchmark
+expects (`make check` is the easiest way to confirm, but not mandatory).
+
 | Command | What it does |
 |----|----|
-| `make check` | Verifies the required files exist; validates `metadata.json`, the file name, the SHA-256, the per-tier data structure, coverage, and value ranges. Prints **PASS / PASS-WITH-WARNINGS / FAIL**. |
-| `make clean` | Tier-1 only: cleans the raw export in `raw_data_deposit/` into `predictions/`. |
+| `make check` | Verifies the required files exist; validates `metadata.json`, the file name, the SHA-256 fingerprint, the per-tier data structure, coverage, and value ranges. Prints **PASS / PASS-WITH-WARNINGS / FAIL**. |
+| `make clean` | Tier-1 only: cleans the raw export in `raw_data_deposit/` into `predictions/`, then runs `make manifest`. |
+| `make manifest` | Fingerprints every `predictions/<team_id>_*.csv` and records the names + SHA-256 in `metadata.json`. Run it after writing or changing a prediction file (Tier 2 / 3, or after deleting examples). |
+
+> A **SHA-256 fingerprint** is a 64-character code derived from a file’s exact contents. It’s the
+> tamper-proof seal on your locked predictions: change one number and the code changes, so the
+> organizers can later confirm your deposited file is the one you committed to. `make manifest`
+> computes it for you — you never type it by hand.
+
+## Requirements
+
+You only need these if you choose to run the optional helper commands above:
+
+- **R ≥ 4.2** (the current minimum for **tidyverse**; developed and tested on R 4.4), with the
+  packages **tidyverse**, **jsonlite**, and **digest**. Install them with:
+
+  ``` r
+  install.packages(c("tidyverse", "jsonlite", "digest"))
+  ```
+
+- **GNU Make**, for the `make …` shortcuts. Without it, call the scripts directly:
+  `Rscript scripts/clean.R`, `Rscript scripts/manifest.R`, `Rscript scripts/check.R`.
+
+If you build and validate your submission another way, none of the above is required — only your
+prediction file(s) and `registration.md` are.
 
 ## Tier 1: clean your raw data
 
@@ -58,22 +145,29 @@ Tier-1 predictions are individual-level: you simulate respondents through the **
 instrument** the human study uses, so your raw output carries Qualtrics variable names
 (`trust_competent_1`, `policy_1_1`, `funding_5`, `donation`, …) and lacks the constructed scale
 variables the locked analysis scores (`trust_multidimensional`, the `*_mean` composites, the
-reverse-coded `funding_perceptions`, `age_band`). The `clean` step bridges that gap for you — it
-applies the study’s exact recodes and composites so you don’t have to.
+reverse-coded `funding_perceptions`, `age_band`). `make clean` bridges that gap for you — it applies
+the study’s exact recodes and composites so you don’t have to.
+
+Using it is optional. If you prefer to build the analysis-ready file yourself, that’s fine — but it
+must reproduce those constructed variables exactly as `codebook.csv` documents them (e.g.
+`funding_perceptions = 100 − funding_5`; `age_band` cut at 18–29 / 30–44 / 45–59 / 60+). `make check`
+will tell you whether the result is well-formed.
 
 1.  **Export your simulated responses** as a CSV using the Qualtrics variable names and value codes
     documented in `codebook.csv` (the `qualtrics_label` column). A genuine Qualtrics export — with its
-    two extra header rows and system columns — works as-is; so does a plain one-header CSV.
+    two extra header rows and system columns — works as-is; so does a plain one-header CSV. This repo
+    holds **one** Tier-1 entry, so there is one raw export.
 2.  **Drop that file into `raw_data_deposit/`.** Leave exactly one CSV in the folder (delete the shipped
     `example_raw_export.csv`).
 3.  **Run `make clean`.** It reads the file in `raw_data_deposit/`, maps the Qualtrics labels to the
-    analysis schema, builds the constructed variables, and writes
-    `predictions/<team_id>_T1_primary_v1.csv` (the `team_id` comes from `metadata.json`).
+    analysis schema, builds the constructed variables, writes
+    `predictions/<team_id>_T1_<entry>_v1.csv` (`team_id` and `entry` come from `metadata.json`), and
+    records the file’s fingerprint in `metadata.json`. Edit `metadata.json` *before* this step.
 
-A fresh clone ships `raw_data_deposit/example_raw_export.csv`, so running `make clean` immediately
-reproduces `predictions/example_T1_primary_v1.csv` — try it once to see the workflow, then swap in
-your own data. To clean a file kept elsewhere, pass it explicitly:
-`make clean INPUT=path/to/raw.csv`.
+A fresh clone ships `raw_data_deposit/example_raw_export.csv` and `metadata.json` with
+`entry: "primary"`, so running `make clean` immediately reproduces
+`predictions/example_T1_primary_v1.csv` — try it once to see the workflow, then swap in your own data.
+To clean a file kept elsewhere, pass it explicitly: `make clean INPUT=path/to/raw.csv`.
 
 ## Prediction file naming
 
@@ -81,9 +175,16 @@ your own data. To clean a file kept elsewhere, pass it explicitly:
     <team_id>_T2_<primary|secondary-k>_v<n>_cells_main.csv    # Tier 2
     <team_id>_T2_<primary|secondary-k>_v<n>_cells_moderator.csv
 
-`team_id` must match `metadata.json`. Coverage: 16 interventions + control, 13 outcomes. The exact
-column schema for each tier is enforced by `make check` (see the `example_*` files in `predictions/`
-and `scripts/lib/submission_spec.R`).
+`team_id`, `tier`, and `entry` must match `metadata.json`. `v<n>` is your version counter (start at
+`v1`); `make clean` writes `v1`.
+
+**Coverage.** The study has **17 conditions** = control + **16 interventions**, scored on **13
+outcomes**. In `metadata.json`, `coverage.interventions` counts the 16 interventions (not control)
+and `coverage.outcomes` the 13 outcomes — that’s the `{ "interventions": 16, "outcomes": 13 }` you
+see. Your data must still include the **control** condition: Tier-1 rows and Tier-2 cells cover all
+17 conditions, while Tier-3 reports the 16 interventions’ effects *relative to* control (no control
+row). The exact per-tier column schema and labels are enforced by `make check` (see the `example_*`
+files in `predictions/` and `scripts/lib/submission_spec.R`).
 
 ## The survey
 

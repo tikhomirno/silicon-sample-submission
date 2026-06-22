@@ -25,10 +25,26 @@ input <- if (length(args) >= 1) args[1] else {
   csvs[1]
 }
 
-out <- if (length(args) >= 2) args[2] else {
+## Name the output from metadata.json so a `secondary-k` (or any) entry lands at
+## the right filename: <team_id>_T1_<entry>_v1.csv. Edit metadata.json *before*
+## running clean. An explicit second argument overrides this.
+auto_named <- length(args) < 2
+out <- if (!auto_named) args[2] else {
   mp <- file.path(.root, "metadata.json")
-  team <- if (file.exists(mp)) tryCatch(fromJSON(mp)$team_id, error = function(e) NULL) else NULL
+  m  <- if (file.exists(mp)) tryCatch(fromJSON(mp), error = function(e) NULL) else NULL
+  team  <- m$team_id
+  entry <- if (is.null(m$entry) || !nzchar(m$entry)) "primary" else m$entry
   file.path(.root, "predictions",
-            if (is.null(team)) "cleaned_T1.csv" else sprintf("%s_T1_primary_v1.csv", team))
+            if (is.null(team)) "cleaned_T1.csv" else sprintf("%s_T1_%s_v1.csv", team, entry))
 }
 clean_submission(input, out)
+
+## Refresh metadata.json -> prediction_files with the new file's fingerprint, so
+## the participant never edits a SHA-256 by hand. Best-effort: a metadata problem
+## (e.g. team_id still unset) shouldn't fail the clean itself.
+if (auto_named) {
+  .manifest_sourced <- TRUE
+  source(file.path(.dir, "manifest.R"))
+  tryCatch(update_manifest(.root),
+           error = function(e) message("manifest: skipped (", conditionMessage(e), ")"))
+}

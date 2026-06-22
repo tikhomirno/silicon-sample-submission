@@ -1,6 +1,9 @@
 # Silicon Sample Benchmark — method registration form
 
-Fill in every item before the prediction lock and deposit this file on Zenodo. Items marked **★**
+Fill in every item before the prediction lock; this file ships inside your repo's Zenodo release
+(see the README's *Deposit* step). This form covers **one entry** (one repo / one Zenodo release,
+`primary` or `secondary-k` — see the README's *What counts as a submission*); if you submit several
+entries, fill one form per entry. Items marked **★**
 must be disclosed **fully publicly** (never escrowed or withheld). Items not applicable to your
 approach: write `N/A`. When several models serve different pipeline stages, complete the model
 sections (B) once per model. See the call's *Disclosure policy* for escrow rules.

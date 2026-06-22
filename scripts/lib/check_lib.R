@@ -47,7 +47,6 @@ if (!exists("sst")) {
      "entry is primary|secondary-k", paste("got", m$entry))
   ok(length(m$models) >= 1, "models listed", "none listed")
   ok(is.character(m$approach_family) && nzchar(m$approach_family), "approach_family present", "missing")
-  ok(is.character(m$registration_doi) && nzchar(m$registration_doi), "registration_doi present", "missing")
   dc <- m$disclosure_class
   ok(isTRUE(dc %in% c("A", "B", "C")), "disclosure_class in {A,B,C}", paste("got", dc))
   if (isTRUE(dc == "A"))
@@ -65,9 +64,12 @@ if (!exists("sst")) {
   add("prediction_files listed", "PASS", paste(nrow(pf), "file(s)"))
 
   team <- m$team_id %||% ""
+  ## One repo = one entry: a Tier-2 entry has 2 files (main + moderator cells),
+  ## every other tier has 1. Extra entries belong in their own repo/deposit.
   n_expected <- if (isTRUE(tier == 2)) 2L else 1L
   warn(nrow(pf) == n_expected, paste0("file count for Tier ", tier),
-       paste("expected", n_expected, "got", nrow(pf)))
+       paste0("expected ", n_expected, " for one entry, got ", nrow(pf),
+              " — a repo holds one entry; put extra entries in their own repo"))
 
   ## ---- per-file: name, hash, structure ----
   for (i in seq_len(nrow(pf))) {
@@ -145,6 +147,9 @@ check_repo <- function(root = ".") {
   if (!is_example && length(leftover))
     warn(FALSE, "example files removed from predictions/",
          paste("delete before depositing:", paste(leftover, collapse = ", ")))
+  if (!is_example && has(file.path("raw_data_deposit", "example_raw_export.csv")))
+    warn(FALSE, "example raw export removed from raw_data_deposit/",
+         "delete raw_data_deposit/example_raw_export.csv before depositing")
 
   res <- bind_rows(res, .check_bundle(file.path(root, "metadata.json"), root))
   .finish(res, "metadata.json", root)
