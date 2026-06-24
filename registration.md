@@ -33,16 +33,17 @@ sections (B) once per model. See the call's *Disclosure policy* for escrow rules
 ## C · Prompts
 - **C.1 Exact prompts** — verbatim text or link to deposited file; were they iteratively refined? pre-specified vs in response to outputs:
 - **C.2 System-wide instructions**:
+- **C.3 Prompt-design rationale** — brief rationale for the prompt design: why prompts were structured as they were, and the reasoning behind major design choices (recommended, not required):
 
 ## C · Persona / profile construction (Tiers 1–2)
-- **C.3 Profile source** — source of demographic profiles you constructed: a public survey (e.g. GSS / ANES / Census), other survey, fully synthetic, or none. The benchmark ships no participant pool; report how you built yours, incl. condition assignments:
-- **C.4 Profile verbalization** — which variables, rendered how (template vs generated narrative; if generated: model + prompt):
-- **C.5 Assignment & weighting** — number of personas, assignment to conditions (your responsibility, all 17 conditions), reuse, weighting/matching:
+- **C.4 Profile source** — source of demographic profiles you constructed: a public survey (e.g. GSS / ANES / Census), other survey, fully synthetic, or none. The benchmark ships no participant pool; report how you built yours, incl. condition assignments:
+- **C.5 Profile verbalization** — which variables, rendered how (template vs generated narrative; if generated: model + prompt):
+- **C.6 Assignment & weighting** — number of personas, assignment to conditions (your responsibility, all 17 conditions), reuse, weighting/matching:
 
 ## C · Stimulus and survey administration
-- **C.6 Stimulus presentation** — verbatim vs paraphrase; how state-contingent content is handled:
-- **C.7 Survey walk-through** — one item/call vs blocks vs whole survey; context carry-over; item/option ordering & randomization; scale display; attention/comprehension handling:
-- **C.8 Response elicitation** — free text / constrained choice / structured output / token log-probabilities (if logprobs: normalization & mapping):
+- **C.7 Stimulus presentation** — verbatim vs paraphrase; how state-contingent content is handled:
+- **C.8 Survey walk-through** — one item/call vs blocks vs whole survey; context carry-over; item/option ordering & randomization; scale display; attention/comprehension handling:
+- **C.9 Response elicitation** — free text / constrained choice / structured output / token log-probabilities (if logprobs: normalization & mapping):
 
 ## D · Stochasticity and aggregation
 - **D.1 Runs & seeds** — runs per respondent/item/estimate; seeds; reproducibility under identical settings:

@@ -6,17 +6,23 @@ This repository **is** a submission to the [Silicon Sample Benchmark](https://ja
 a multi-team benchmark of AI approaches for predicting the results of a behavioral megastudy on
 trust in climate scientists, *before* the human data are revealed.
 
-Clone it (or click **“Use this template”** on GitHub), drop in your predictions, edit two files, and
-release it to Zenodo. The repo ships with a **random example submission** so a fresh clone is already
-valid — replace it with your own.
+**This repository is meant to be worked in, not just filled out.** The ideal scenario: your *whole*
+simulation lives here — your code, prompts, profile construction, and intermediate data, alongside the
+predictions they produce. Clone it (or click **“Use this template”** on GitHub) and build your pipeline
+inside it. If that isn’t possible — proprietary code, or work that already lives elsewhere — you can
+instead treat it as a **deposit repository**: just drop in your prediction file(s), complete
+`registration.md`, and release to Zenodo. Both are valid, but **having everything in one place is
+strongly preferred** — and you can still keep proprietary parts private by **gitignoring** them (see
+the disclosure policy).
+
+The repo ships with a **random example submission** so a fresh clone is already valid — replace it with
+your own.
 
 > The numbers in the example are random placeholders with **no real effects** — for format only.
 
 > **What we actually need from you:** (1) your **prediction file(s)** and (2) a completed
-> **`registration.md`**, released together (see *Deposit*) — those two are all we read. But the repo is
-> also a fine home for your *whole* pipeline (simulation code, prompts, profile construction,
-> intermediate data); keep proprietary parts out of the public record by **gitignoring** them, in line
-> with the disclosure policy.
+> **`registration.md`**, released together (see *Deposit*) — those two are all we read; everything else
+> you keep in the repo is there for transparency and reproducibility.
 > The benchmark ships the survey, codebook, validator, and intervention texts — but **no
 > participant / profile pool**. You construct your own synthetic respondents; there is no pool
 > to wait for. The `profile_id` column is simply a unique id you assign to each respondent.
