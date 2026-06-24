@@ -17,7 +17,10 @@ valid — replace it with your own.
 > The numbers in the example are random placeholders with **no real effects** — for format only.
 
 > **What we actually need from you:** (1) your **prediction file(s)** and (2) a completed
-> **`registration.md`**, released together (see *Deposit*). Everything else is in service of those two.
+> **`registration.md`**, released together (see *Deposit*) — those two are all we read. But the repo is
+> also a fine home for your *whole* pipeline (simulation code, prompts, profile construction,
+> intermediate data); keep proprietary parts out of the public record by **gitignoring** them, in line
+> with the disclosure policy.
 > The benchmark ships the survey, codebook, validator, and intervention texts — but **no
 > participant / profile pool**. You construct your own synthetic respondents; there is no pool
 > to wait for. The `profile_id` column is simply a unique id you assign to each respondent.
@@ -213,8 +216,10 @@ if you want to *read* it without a Qualtrics account.
 > and `scripts/lib/submission_spec.R`; treat those as authoritative for scope, and the two survey files as
 > the faithful record of the instrument.
 
-A human-readable rendering is also provided as `survey/questionnaire.txt` (every item as
-`[label] question` + response values, plus the condition labels and intervention stimulus texts).
+A human-readable rendering is also provided as `survey/questionnaire.txt`, laid out in
+chronological survey order (the order a respondent moves through the instrument). Every item is
+annotated as `[qualtrics_label · answer values] question`, alongside the condition labels and the
+intervention stimulus texts.
 
 Tier-1 runs export raw Qualtrics column names; `make clean` maps them to the analysis schema
 documented in `codebook.csv`.
