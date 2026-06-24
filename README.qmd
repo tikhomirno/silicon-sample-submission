@@ -18,6 +18,9 @@ valid — replace it with your own.
 
 > **What we actually need from you:** (1) your **prediction file(s)** and (2) a completed
 > **`registration.md`**, released together (see *Deposit*). Everything else is in service of those two.
+> The benchmark ships the survey, codebook, validator, and intervention texts — but **no
+> participant / profile pool**. You construct your own synthetic respondents; there is no pool
+> to wait for. The `profile_id` column is simply a unique id you assign to each respondent.
 > The `make` commands (`clean`, `manifest`, `check`) are **optional conveniences** — they help you
 > build and self-validate those files, but you may produce them however you like (e.g. your own
 > cleaning script driven by `codebook.csv`). We can't guarantee that malformed submissions will be

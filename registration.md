@@ -35,9 +35,9 @@ sections (B) once per model. See the call's *Disclosure policy* for escrow rules
 - **C.2 System-wide instructions**:
 
 ## C · Persona / profile construction (Tiers 1–2)
-- **C.3 Profile source** — provided GSS pool / ANES / Census / other / synthetic / none; register any deviation from the published pool incl. condition assignments:
+- **C.3 Profile source** — source of demographic profiles you constructed: a public survey (e.g. GSS / ANES / Census), other survey, fully synthetic, or none. The benchmark ships no participant pool; report how you built yours, incl. condition assignments:
 - **C.4 Profile verbalization** — which variables, rendered how (template vs generated narrative; if generated: model + prompt):
-- **C.5 Assignment & weighting** — number of personas, assignment to conditions, reuse, weighting/matching:
+- **C.5 Assignment & weighting** — number of personas, assignment to conditions (your responsibility, all 17 conditions), reuse, weighting/matching:
 
 ## C · Stimulus and survey administration
 - **C.6 Stimulus presentation** — verbatim vs paraphrase; how state-contingent content is handled:

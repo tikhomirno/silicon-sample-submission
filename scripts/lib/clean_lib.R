@@ -17,9 +17,9 @@
 ##
 ## Expected raw columns (Qualtrics labels): see the codebook on the website.
 ## `condition` must already hold a canonical condition title (see submission_spec).
-## `profile_id` should carry the published profile-pool id where used.
+## `profile_id` is your own unique respondent identifier (unique within the submission).
 ## Demographic columns may be numeric Qualtrics codes OR already-labelled values
-## (e.g. injected from the profile pool); both are handled.
+## (e.g. injected from your own profiles); both are handled.
 ## ---------------------------------------------------------------------------
 
 suppressPackageStartupMessages(library(tidyverse))
