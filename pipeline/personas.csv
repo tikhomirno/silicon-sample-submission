@@ -1,0 +1,851 @@
+profile_id,condition,gender,year_birth,race,education,income,party
+p00001,control,2,1981,1,2,1,3
+p00002,control,1,1972,1,2,3,1
+p00003,control,2,1998,1,3,2,3
+p00004,control,2,1961,1,2,5,2
+p00005,control,1,2007,1,2,1,2
+p00006,control,1,2002,1,3,5,2
+p00007,control,1,2007,1,2,1,1
+p00008,control,1,2004,3,2,2,3
+p00009,control,2,1945,2,2,4,1
+p00010,control,2,1982,1,4,5,3
+p00011,control,2,1996,1,1,5,3
+p00012,control,2,1960,1,5,3,1
+p00013,control,2,1988,3,3,3,2
+p00014,control,2,1962,1,1,1,3
+p00015,control,2,1953,1,3,3,1
+p00016,control,2,1981,1,5,4,3
+p00017,control,1,1992,1,5,5,1
+p00018,control,2,1979,1,3,5,2
+p00019,control,2,2003,1,4,3,1
+p00020,control,1,1996,1,6,4,1
+p00021,control,2,1987,1,3,1,3
+p00022,control,2,1962,5,2,3,3
+p00023,control,2,1937,3,2,2,4
+p00024,control,2,1974,1,2,1,1
+p00025,control,1,1972,1,3,2,3
+p00026,control,2,1964,1,3,3,3
+p00027,control,1,1948,3,4,2,1
+p00028,control,1,1990,3,1,4,3
+p00029,control,1,1997,3,2,2,2
+p00030,control,1,1992,3,1,4,3
+p00031,control,3,1998,3,5,5,3
+p00032,control,1,2001,3,5,1,1
+p00033,control,2,1982,1,3,5,4
+p00034,control,2,1970,1,2,1,3
+p00035,control,1,2003,2,3,5,1
+p00036,control,2,1964,1,1,5,2
+p00037,control,1,1948,2,3,3,3
+p00038,control,1,1967,2,2,2,1
+p00039,control,1,1974,3,1,3,4
+p00040,control,2,1964,1,2,2,1
+p00041,control,1,1992,3,4,4,3
+p00042,control,2,1981,1,5,1,3
+p00043,control,1,1982,1,2,3,3
+p00044,control,2,1986,1,2,5,1
+p00045,control,1,1968,1,4,4,1
+p00046,control,2,1949,1,2,5,3
+p00047,control,2,2008,2,2,1,2
+p00048,control,2,1941,1,2,4,3
+p00049,control,2,1988,1,3,1,3
+p00050,control,2,1941,3,1,4,2
+p00051,Corporate reliance,2,1941,3,2,1,3
+p00052,Corporate reliance,2,1996,1,4,3,2
+p00053,Corporate reliance,1,1959,2,3,2,1
+p00054,Corporate reliance,2,1955,1,5,3,3
+p00055,Corporate reliance,1,2004,5,2,1,2
+p00056,Corporate reliance,1,1956,5,2,5,1
+p00057,Corporate reliance,1,2002,4,3,4,3
+p00058,Corporate reliance,1,1976,5,5,4,3
+p00059,Corporate reliance,2,2004,2,2,4,2
+p00060,Corporate reliance,2,1998,2,5,4,2
+p00061,Corporate reliance,1,1981,1,4,3,2
+p00062,Corporate reliance,1,1986,1,5,4,1
+p00063,Corporate reliance,2,2000,2,1,5,1
+p00064,Corporate reliance,1,1984,1,2,3,3
+p00065,Corporate reliance,2,2002,2,4,3,2
+p00066,Corporate reliance,1,1997,3,4,1,2
+p00067,Corporate reliance,2,1997,1,2,5,2
+p00068,Corporate reliance,2,1945,1,2,4,2
+p00069,Corporate reliance,2,1938,3,3,5,3
+p00070,Corporate reliance,2,1977,3,2,4,2
+p00071,Corporate reliance,1,1989,1,2,2,2
+p00072,Corporate reliance,1,2005,1,2,3,2
+p00073,Corporate reliance,1,1981,1,5,3,3
+p00074,Corporate reliance,2,1942,1,5,2,2
+p00075,Corporate reliance,1,1940,3,3,3,1
+p00076,Corporate reliance,2,1990,1,4,4,3
+p00077,Corporate reliance,1,1937,2,1,3,3
+p00078,Corporate reliance,1,1998,3,2,2,2
+p00079,Corporate reliance,2,1991,1,4,5,1
+p00080,Corporate reliance,2,2008,1,5,2,1
+p00081,Corporate reliance,2,1965,5,2,1,1
+p00082,Corporate reliance,1,1998,5,3,2,2
+p00083,Corporate reliance,2,1970,3,2,2,3
+p00084,Corporate reliance,2,1948,5,3,4,1
+p00085,Corporate reliance,1,1971,3,2,4,3
+p00086,Corporate reliance,2,1948,1,3,3,2
+p00087,Corporate reliance,1,1983,1,3,2,3
+p00088,Corporate reliance,1,1979,3,5,2,3
+p00089,Corporate reliance,1,1974,3,3,2,1
+p00090,Corporate reliance,2,1958,1,3,3,2
+p00091,Corporate reliance,1,2003,1,4,2,3
+p00092,Corporate reliance,2,1958,1,2,2,2
+p00093,Corporate reliance,2,1978,2,3,4,1
+p00094,Corporate reliance,1,1985,2,3,3,2
+p00095,Corporate reliance,1,1949,3,2,2,1
+p00096,Corporate reliance,2,2007,5,4,2,3
+p00097,Corporate reliance,2,1987,1,2,1,1
+p00098,Corporate reliance,1,1994,3,2,1,1
+p00099,Corporate reliance,2,1994,3,2,1,2
+p00100,Corporate reliance,1,1976,1,5,3,3
+p00101,Social justice,2,1995,2,2,4,3
+p00102,Social justice,1,2005,3,3,4,1
+p00103,Social justice,2,1974,1,3,3,3
+p00104,Social justice,1,1997,3,3,2,1
+p00105,Social justice,1,1988,1,3,3,2
+p00106,Social justice,1,1985,3,1,2,1
+p00107,Social justice,2,1948,4,3,3,3
+p00108,Social justice,1,1940,1,4,3,3
+p00109,Social justice,1,1952,2,4,5,2
+p00110,Social justice,2,1980,4,4,3,1
+p00111,Social justice,2,1986,2,5,5,3
+p00112,Social justice,2,1996,1,3,3,1
+p00113,Social justice,2,1953,1,1,2,2
+p00114,Social justice,1,1968,1,3,4,2
+p00115,Social justice,1,1965,1,2,5,2
+p00116,Social justice,2,1981,1,3,2,2
+p00117,Social justice,1,1946,1,2,1,2
+p00118,Social justice,1,1951,5,3,2,1
+p00119,Social justice,1,1973,1,4,1,3
+p00120,Social justice,2,1979,3,3,2,3
+p00121,Social justice,1,1959,1,2,3,3
+p00122,Social justice,1,2007,3,3,5,2
+p00123,Social justice,2,1957,3,3,4,3
+p00124,Social justice,1,1989,1,3,3,2
+p00125,Social justice,1,1997,1,4,3,2
+p00126,Social justice,2,1967,1,4,5,3
+p00127,Social justice,1,1981,5,2,1,3
+p00128,Social justice,1,2001,1,5,5,1
+p00129,Social justice,1,1958,3,4,5,3
+p00130,Social justice,2,1954,2,5,3,2
+p00131,Social justice,2,1978,4,6,4,2
+p00132,Social justice,2,1998,1,2,2,1
+p00133,Social justice,1,1996,1,2,3,3
+p00134,Social justice,1,1961,2,3,4,2
+p00135,Social justice,1,1978,1,2,1,3
+p00136,Social justice,2,1945,1,5,5,2
+p00137,Social justice,1,1944,3,2,3,2
+p00138,Social justice,1,1987,1,4,1,3
+p00139,Social justice,2,1996,2,4,1,3
+p00140,Social justice,2,1967,3,2,4,1
+p00141,Social justice,2,2004,3,4,5,3
+p00142,Social justice,1,1946,3,1,3,1
+p00143,Social justice,2,1956,1,2,3,3
+p00144,Social justice,1,1967,1,5,5,3
+p00145,Social justice,1,1983,1,5,1,3
+p00146,Social justice,2,1943,1,4,3,1
+p00147,Social justice,2,1992,1,4,4,3
+p00148,Social justice,1,1936,2,3,4,3
+p00149,Social justice,1,1987,1,4,5,2
+p00150,Social justice,1,1994,1,6,1,1
+p00151,Interview Prof. Maraun,1,1975,2,4,5,2
+p00152,Interview Prof. Maraun,2,1962,2,4,4,3
+p00153,Interview Prof. Maraun,1,1985,1,5,5,1
+p00154,Interview Prof. Maraun,2,1973,2,1,2,3
+p00155,Interview Prof. Maraun,1,1940,2,4,3,1
+p00156,Interview Prof. Maraun,2,1959,3,2,5,2
+p00157,Interview Prof. Maraun,2,1968,1,2,5,1
+p00158,Interview Prof. Maraun,2,1962,1,4,1,3
+p00159,Interview Prof. Maraun,2,2003,1,2,1,1
+p00160,Interview Prof. Maraun,1,1950,1,3,2,3
+p00161,Interview Prof. Maraun,2,1993,1,4,5,2
+p00162,Interview Prof. Maraun,1,1996,1,3,4,2
+p00163,Interview Prof. Maraun,2,1964,1,2,1,3
+p00164,Interview Prof. Maraun,1,1970,5,3,3,3
+p00165,Interview Prof. Maraun,1,1997,2,5,3,3
+p00166,Interview Prof. Maraun,1,1982,1,3,3,1
+p00167,Interview Prof. Maraun,1,1986,5,4,3,1
+p00168,Interview Prof. Maraun,1,2002,3,4,3,3
+p00169,Interview Prof. Maraun,2,1976,1,5,5,2
+p00170,Interview Prof. Maraun,2,1965,2,2,3,1
+p00171,Interview Prof. Maraun,2,1978,1,3,1,1
+p00172,Interview Prof. Maraun,2,1990,5,4,4,3
+p00173,Interview Prof. Maraun,2,1998,1,2,4,2
+p00174,Interview Prof. Maraun,1,1996,1,4,1,3
+p00175,Interview Prof. Maraun,2,1964,1,3,2,2
+p00176,Interview Prof. Maraun,2,1942,2,5,1,3
+p00177,Interview Prof. Maraun,1,2007,2,3,3,1
+p00178,Interview Prof. Maraun,1,1963,1,4,3,2
+p00179,Interview Prof. Maraun,1,1993,2,1,2,1
+p00180,Interview Prof. Maraun,1,2004,1,3,3,1
+p00181,Interview Prof. Maraun,2,1978,3,4,1,3
+p00182,Interview Prof. Maraun,1,2008,1,2,3,2
+p00183,Interview Prof. Maraun,1,1977,1,2,4,3
+p00184,Interview Prof. Maraun,1,1937,1,2,3,2
+p00185,Interview Prof. Maraun,2,2004,1,4,1,3
+p00186,Interview Prof. Maraun,2,1978,1,4,5,3
+p00187,Interview Prof. Maraun,1,1994,1,2,4,1
+p00188,Interview Prof. Maraun,2,1946,3,4,3,3
+p00189,Interview Prof. Maraun,2,1971,1,5,2,2
+p00190,Interview Prof. Maraun,1,1971,1,1,3,2
+p00191,Interview Prof. Maraun,1,1996,1,4,5,1
+p00192,Interview Prof. Maraun,1,1975,1,4,5,2
+p00193,Interview Prof. Maraun,1,1946,2,3,5,2
+p00194,Interview Prof. Maraun,1,1940,3,3,1,1
+p00195,Interview Prof. Maraun,2,1989,2,3,5,2
+p00196,Interview Prof. Maraun,2,1945,3,4,1,1
+p00197,Interview Prof. Maraun,1,1977,3,5,3,1
+p00198,Interview Prof. Maraun,1,1998,1,5,4,2
+p00199,Interview Prof. Maraun,1,1980,1,4,4,3
+p00200,Interview Prof. Maraun,3,1943,4,1,4,2
+p00201,Funding,1,2004,1,5,3,1
+p00202,Funding,1,2007,3,3,3,3
+p00203,Funding,1,1971,3,2,3,1
+p00204,Funding,2,1942,4,4,1,2
+p00205,Funding,2,1952,3,4,2,1
+p00206,Funding,1,1941,3,3,5,3
+p00207,Funding,2,1977,1,3,1,1
+p00208,Funding,1,1968,2,5,3,1
+p00209,Funding,1,1939,1,2,3,2
+p00210,Funding,2,1964,1,3,2,1
+p00211,Funding,1,2000,1,1,2,2
+p00212,Funding,2,1997,3,2,2,3
+p00213,Funding,2,1962,1,3,5,1
+p00214,Funding,2,1994,3,3,1,2
+p00215,Funding,1,1996,2,3,1,3
+p00216,Funding,1,1973,1,2,1,2
+p00217,Funding,2,1978,1,4,3,2
+p00218,Funding,2,1949,5,3,3,2
+p00219,Funding,1,1976,1,4,2,3
+p00220,Funding,2,1969,3,2,2,2
+p00221,Funding,2,1968,1,4,4,3
+p00222,Funding,1,2001,1,4,5,2
+p00223,Funding,2,1990,1,2,4,1
+p00224,Funding,1,1984,2,2,4,2
+p00225,Funding,2,1989,1,5,3,2
+p00226,Funding,1,1950,1,3,3,4
+p00227,Funding,1,2004,1,4,2,3
+p00228,Funding,1,1985,1,4,5,3
+p00229,Funding,2,1986,5,1,4,2
+p00230,Funding,1,1945,1,4,4,2
+p00231,Funding,2,2005,1,3,3,3
+p00232,Funding,1,1976,3,3,3,2
+p00233,Funding,2,1978,1,2,3,3
+p00234,Funding,2,2004,1,3,4,4
+p00235,Funding,2,1994,1,5,3,1
+p00236,Funding,2,1968,2,4,3,2
+p00237,Funding,2,1994,4,3,4,2
+p00238,Funding,2,2005,1,3,2,3
+p00239,Funding,1,1973,4,1,3,3
+p00240,Funding,2,1975,3,1,5,3
+p00241,Funding,2,1986,1,4,3,3
+p00242,Funding,1,1962,4,1,1,1
+p00243,Funding,2,2003,1,5,3,2
+p00244,Funding,2,2005,1,2,2,2
+p00245,Funding,2,1979,2,2,4,3
+p00246,Funding,2,1982,3,1,1,3
+p00247,Funding,1,1971,2,3,1,3
+p00248,Funding,2,1971,1,4,4,2
+p00249,Funding,1,2008,1,3,2,1
+p00250,Funding,2,1956,3,5,1,2
+p00251,Oil industry misinformation,1,1976,1,3,1,1
+p00252,Oil industry misinformation,2,1939,1,5,1,2
+p00253,Oil industry misinformation,1,1976,1,6,3,3
+p00254,Oil industry misinformation,2,1980,1,5,2,2
+p00255,Oil industry misinformation,2,2001,3,4,2,1
+p00256,Oil industry misinformation,2,2006,3,4,3,2
+p00257,Oil industry misinformation,1,1978,1,3,3,2
+p00258,Oil industry misinformation,2,1947,1,5,3,3
+p00259,Oil industry misinformation,2,1991,1,3,3,1
+p00260,Oil industry misinformation,2,2003,1,2,5,1
+p00261,Oil industry misinformation,1,1956,5,4,2,2
+p00262,Oil industry misinformation,2,1949,1,3,1,2
+p00263,Oil industry misinformation,2,2002,3,4,4,1
+p00264,Oil industry misinformation,2,1971,3,3,4,3
+p00265,Oil industry misinformation,2,1998,3,3,5,1
+p00266,Oil industry misinformation,1,1970,1,2,1,3
+p00267,Oil industry misinformation,2,1984,1,4,4,3
+p00268,Oil industry misinformation,1,1973,2,3,2,1
+p00269,Oil industry misinformation,2,1956,2,5,4,3
+p00270,Oil industry misinformation,1,1989,1,3,2,3
+p00271,Oil industry misinformation,2,1992,3,3,3,3
+p00272,Oil industry misinformation,1,1943,1,4,3,3
+p00273,Oil industry misinformation,2,1936,1,1,5,1
+p00274,Oil industry misinformation,1,1946,1,2,3,3
+p00275,Oil industry misinformation,1,1962,3,2,1,3
+p00276,Oil industry misinformation,1,1993,1,4,1,3
+p00277,Oil industry misinformation,2,2000,1,4,5,2
+p00278,Oil industry misinformation,2,1969,1,4,5,1
+p00279,Oil industry misinformation,2,1973,3,1,5,2
+p00280,Oil industry misinformation,2,1937,5,3,3,3
+p00281,Oil industry misinformation,1,1937,1,2,3,3
+p00282,Oil industry misinformation,2,1989,1,3,5,3
+p00283,Oil industry misinformation,2,1978,1,4,4,3
+p00284,Oil industry misinformation,2,2003,1,4,1,3
+p00285,Oil industry misinformation,1,1940,1,3,1,3
+p00286,Oil industry misinformation,1,1967,1,2,4,3
+p00287,Oil industry misinformation,2,1985,1,2,2,3
+p00288,Oil industry misinformation,1,1979,1,5,4,2
+p00289,Oil industry misinformation,1,2004,1,5,3,2
+p00290,Oil industry misinformation,1,1955,1,3,3,3
+p00291,Oil industry misinformation,2,1993,2,4,3,2
+p00292,Oil industry misinformation,2,1982,1,3,3,3
+p00293,Oil industry misinformation,2,2003,1,4,4,2
+p00294,Oil industry misinformation,2,1952,1,3,3,1
+p00295,Oil industry misinformation,1,1969,1,2,1,1
+p00296,Oil industry misinformation,1,2002,1,6,5,1
+p00297,Oil industry misinformation,1,1965,1,2,4,3
+p00298,Oil industry misinformation,3,1955,1,5,5,2
+p00299,Oil industry misinformation,2,1971,1,5,1,4
+p00300,Oil industry misinformation,2,1994,1,1,1,2
+p00301,Measurement & modeling (1),1,1973,1,2,3,1
+p00302,Measurement & modeling (1),2,1997,1,4,4,3
+p00303,Measurement & modeling (1),1,1959,1,1,3,3
+p00304,Measurement & modeling (1),1,1997,1,3,4,3
+p00305,Measurement & modeling (1),1,2004,4,3,3,3
+p00306,Measurement & modeling (1),1,1959,1,4,2,2
+p00307,Measurement & modeling (1),2,1999,4,3,3,2
+p00308,Measurement & modeling (1),2,1936,1,3,4,2
+p00309,Measurement & modeling (1),2,1994,1,4,2,3
+p00310,Measurement & modeling (1),1,1937,1,3,3,2
+p00311,Measurement & modeling (1),2,1991,4,4,1,3
+p00312,Measurement & modeling (1),1,2004,2,1,1,3
+p00313,Measurement & modeling (1),2,1971,1,5,2,3
+p00314,Measurement & modeling (1),2,2005,1,6,3,1
+p00315,Measurement & modeling (1),1,1978,1,2,2,2
+p00316,Measurement & modeling (1),1,1977,1,3,1,3
+p00317,Measurement & modeling (1),1,1968,1,2,1,3
+p00318,Measurement & modeling (1),1,1966,4,3,3,1
+p00319,Measurement & modeling (1),2,1990,1,3,5,2
+p00320,Measurement & modeling (1),2,1951,2,3,1,3
+p00321,Measurement & modeling (1),2,1997,1,5,5,3
+p00322,Measurement & modeling (1),2,1968,5,4,4,2
+p00323,Measurement & modeling (1),1,1959,1,2,3,1
+p00324,Measurement & modeling (1),2,1967,1,3,1,2
+p00325,Measurement & modeling (1),2,2000,1,2,3,3
+p00326,Measurement & modeling (1),1,1982,4,3,2,3
+p00327,Measurement & modeling (1),1,1991,1,3,3,3
+p00328,Measurement & modeling (1),1,1959,3,1,5,3
+p00329,Measurement & modeling (1),1,2002,1,1,1,1
+p00330,Measurement & modeling (1),2,1975,1,5,5,3
+p00331,Measurement & modeling (1),1,1959,3,5,3,1
+p00332,Measurement & modeling (1),2,2004,1,1,5,2
+p00333,Measurement & modeling (1),1,1948,3,4,5,2
+p00334,Measurement & modeling (1),2,1972,1,5,2,3
+p00335,Measurement & modeling (1),2,1997,1,5,1,2
+p00336,Measurement & modeling (1),2,1956,2,3,5,2
+p00337,Measurement & modeling (1),3,1969,1,2,5,2
+p00338,Measurement & modeling (1),1,1971,3,2,2,1
+p00339,Measurement & modeling (1),2,1990,2,4,2,1
+p00340,Measurement & modeling (1),1,2004,3,2,1,2
+p00341,Measurement & modeling (1),1,1973,1,2,1,3
+p00342,Measurement & modeling (1),1,1990,1,4,4,2
+p00343,Measurement & modeling (1),2,1959,1,3,1,2
+p00344,Measurement & modeling (1),1,1980,1,2,4,2
+p00345,Measurement & modeling (1),2,1943,2,2,1,2
+p00346,Measurement & modeling (1),2,1956,1,5,3,2
+p00347,Measurement & modeling (1),2,1946,1,2,5,1
+p00348,Measurement & modeling (1),2,1990,1,4,3,3
+p00349,Measurement & modeling (1),1,1990,3,3,5,1
+p00350,Measurement & modeling (1),2,1961,1,5,3,3
+p00351,Former skeptics,2,1992,1,4,4,3
+p00352,Former skeptics,1,2004,2,4,4,1
+p00353,Former skeptics,2,1951,1,5,5,2
+p00354,Former skeptics,2,2003,3,3,5,1
+p00355,Former skeptics,1,1986,2,1,5,3
+p00356,Former skeptics,1,1984,3,2,1,1
+p00357,Former skeptics,2,1949,2,3,3,3
+p00358,Former skeptics,1,1973,5,3,2,3
+p00359,Former skeptics,1,1997,1,3,2,2
+p00360,Former skeptics,2,1974,1,1,1,3
+p00361,Former skeptics,2,2003,2,2,5,1
+p00362,Former skeptics,1,2006,1,3,4,3
+p00363,Former skeptics,1,1998,1,3,2,3
+p00364,Former skeptics,1,1985,1,4,4,3
+p00365,Former skeptics,1,1949,1,3,2,3
+p00366,Former skeptics,1,1971,1,3,1,2
+p00367,Former skeptics,2,1994,3,2,4,1
+p00368,Former skeptics,1,2007,1,3,1,2
+p00369,Former skeptics,1,1972,1,3,4,3
+p00370,Former skeptics,1,1949,1,2,5,3
+p00371,Former skeptics,1,1936,1,4,5,2
+p00372,Former skeptics,2,1971,3,3,1,3
+p00373,Former skeptics,1,1959,1,3,1,2
+p00374,Former skeptics,2,1942,1,3,2,2
+p00375,Former skeptics,2,1949,1,4,3,3
+p00376,Former skeptics,2,1998,1,6,3,2
+p00377,Former skeptics,2,1952,1,4,2,3
+p00378,Former skeptics,2,1968,2,2,1,1
+p00379,Former skeptics,2,1996,1,3,1,3
+p00380,Former skeptics,1,1987,3,6,4,1
+p00381,Former skeptics,1,1941,1,2,4,3
+p00382,Former skeptics,2,2006,3,4,4,2
+p00383,Former skeptics,2,1977,1,1,4,3
+p00384,Former skeptics,1,1985,4,3,5,2
+p00385,Former skeptics,1,1997,5,3,4,3
+p00386,Former skeptics,1,1954,1,2,2,3
+p00387,Former skeptics,1,1987,3,4,5,3
+p00388,Former skeptics,2,1998,1,2,5,2
+p00389,Former skeptics,1,2002,2,2,4,1
+p00390,Former skeptics,1,1958,1,1,4,3
+p00391,Former skeptics,1,1998,3,2,4,3
+p00392,Former skeptics,1,2001,2,3,3,1
+p00393,Former skeptics,2,1995,1,2,1,2
+p00394,Former skeptics,1,1963,1,2,3,3
+p00395,Former skeptics,3,1946,1,3,1,3
+p00396,Former skeptics,1,1985,3,5,4,2
+p00397,Former skeptics,1,1982,3,3,3,3
+p00398,Former skeptics,1,1994,2,2,3,3
+p00399,Former skeptics,1,1985,3,5,2,3
+p00400,Former skeptics,1,2002,1,5,5,2
+p00401,High public trust,2,2001,1,5,1,2
+p00402,High public trust,2,1990,1,3,4,3
+p00403,High public trust,1,1942,2,1,2,3
+p00404,High public trust,2,1954,2,3,3,3
+p00405,High public trust,2,2000,1,1,1,3
+p00406,High public trust,2,1962,1,3,5,3
+p00407,High public trust,1,1997,5,2,2,3
+p00408,High public trust,2,1999,1,4,4,1
+p00409,High public trust,1,1944,1,2,3,3
+p00410,High public trust,1,1991,3,2,5,3
+p00411,High public trust,1,2002,1,4,3,1
+p00412,High public trust,1,1991,3,2,1,3
+p00413,High public trust,2,1945,1,3,1,3
+p00414,High public trust,1,1989,4,2,5,1
+p00415,High public trust,2,1944,1,2,3,3
+p00416,High public trust,2,1995,1,4,1,1
+p00417,High public trust,2,1981,1,3,2,3
+p00418,High public trust,1,1988,1,2,4,3
+p00419,High public trust,2,1991,1,4,2,3
+p00420,High public trust,1,1959,4,1,3,3
+p00421,High public trust,2,1966,1,4,5,3
+p00422,High public trust,2,2000,1,5,5,1
+p00423,High public trust,2,1996,4,3,4,2
+p00424,High public trust,2,1964,1,3,3,3
+p00425,High public trust,2,1998,1,2,2,3
+p00426,High public trust,1,1943,1,2,5,1
+p00427,High public trust,1,1963,1,3,3,2
+p00428,High public trust,1,1960,1,4,1,3
+p00429,High public trust,2,1985,1,4,2,1
+p00430,High public trust,1,1991,1,2,5,1
+p00431,High public trust,1,1939,3,2,3,3
+p00432,High public trust,1,2008,3,2,2,2
+p00433,High public trust,1,1971,2,5,1,4
+p00434,High public trust,1,1998,1,5,5,2
+p00435,High public trust,1,2001,4,3,4,2
+p00436,High public trust,1,1990,1,2,2,3
+p00437,High public trust,2,1999,2,3,5,2
+p00438,High public trust,1,2002,1,5,3,3
+p00439,High public trust,1,1941,1,4,3,3
+p00440,High public trust,2,1987,1,2,2,1
+p00441,High public trust,1,1942,3,3,2,3
+p00442,High public trust,1,1994,2,2,4,3
+p00443,High public trust,2,2005,5,3,5,4
+p00444,High public trust,2,2005,3,4,5,1
+p00445,High public trust,2,1936,1,5,5,3
+p00446,High public trust,1,1949,1,1,2,1
+p00447,High public trust,1,1981,2,4,2,1
+p00448,High public trust,1,1939,1,3,5,3
+p00449,High public trust,1,1939,1,4,4,3
+p00450,High public trust,1,1991,1,5,4,3
+p00451,Measurement & modeling (2),2,1979,1,5,4,2
+p00452,Measurement & modeling (2),1,1968,1,4,1,3
+p00453,Measurement & modeling (2),2,1936,3,4,3,1
+p00454,Measurement & modeling (2),2,1984,1,3,5,1
+p00455,Measurement & modeling (2),1,1959,1,3,5,3
+p00456,Measurement & modeling (2),2,1970,1,2,2,1
+p00457,Measurement & modeling (2),2,1995,1,3,3,1
+p00458,Measurement & modeling (2),1,1982,1,1,3,3
+p00459,Measurement & modeling (2),1,1971,1,4,1,1
+p00460,Measurement & modeling (2),1,1995,1,3,4,2
+p00461,Measurement & modeling (2),1,1964,5,5,4,2
+p00462,Measurement & modeling (2),2,1972,1,1,2,1
+p00463,Measurement & modeling (2),2,1943,1,4,2,1
+p00464,Measurement & modeling (2),2,1988,1,2,3,2
+p00465,Measurement & modeling (2),1,1972,1,2,4,3
+p00466,Measurement & modeling (2),1,1980,1,3,4,1
+p00467,Measurement & modeling (2),1,1979,1,2,1,2
+p00468,Measurement & modeling (2),1,1983,1,4,4,1
+p00469,Measurement & modeling (2),1,1988,3,2,1,2
+p00470,Measurement & modeling (2),2,1973,4,3,2,2
+p00471,Measurement & modeling (2),2,1983,1,5,4,3
+p00472,Measurement & modeling (2),2,1980,1,5,1,1
+p00473,Measurement & modeling (2),1,2008,5,3,5,3
+p00474,Measurement & modeling (2),1,1958,3,4,1,2
+p00475,Measurement & modeling (2),1,1968,1,5,4,3
+p00476,Measurement & modeling (2),1,1975,1,3,3,3
+p00477,Measurement & modeling (2),2,2007,1,2,3,2
+p00478,Measurement & modeling (2),2,1990,2,3,1,2
+p00479,Measurement & modeling (2),2,1971,1,5,2,1
+p00480,Measurement & modeling (2),1,1937,1,2,4,2
+p00481,Measurement & modeling (2),2,1939,1,5,1,3
+p00482,Measurement & modeling (2),1,1983,3,3,1,2
+p00483,Measurement & modeling (2),2,1953,3,5,5,2
+p00484,Measurement & modeling (2),2,2004,1,4,3,3
+p00485,Measurement & modeling (2),2,2005,1,3,5,3
+p00486,Measurement & modeling (2),1,1983,1,5,4,1
+p00487,Measurement & modeling (2),1,1974,3,3,2,1
+p00488,Measurement & modeling (2),2,1943,1,1,1,3
+p00489,Measurement & modeling (2),2,1960,2,4,2,2
+p00490,Measurement & modeling (2),1,1998,4,4,3,1
+p00491,Measurement & modeling (2),2,1984,3,4,2,3
+p00492,Measurement & modeling (2),1,1952,1,4,5,2
+p00493,Measurement & modeling (2),3,2000,5,4,3,3
+p00494,Measurement & modeling (2),1,1986,1,6,4,3
+p00495,Measurement & modeling (2),2,1985,2,2,3,1
+p00496,Measurement & modeling (2),1,1999,1,2,1,2
+p00497,Measurement & modeling (2),1,1982,1,1,4,3
+p00498,Measurement & modeling (2),2,1997,2,3,3,3
+p00499,Measurement & modeling (2),2,1992,3,5,1,1
+p00500,Measurement & modeling (2),2,2004,1,5,5,3
+p00501,Peer-review,1,1978,3,2,4,2
+p00502,Peer-review,1,1992,1,1,4,3
+p00503,Peer-review,2,1974,1,5,3,2
+p00504,Peer-review,1,2006,1,3,3,3
+p00505,Peer-review,2,1991,1,1,2,3
+p00506,Peer-review,1,1996,1,4,1,3
+p00507,Peer-review,2,1969,1,3,3,2
+p00508,Peer-review,1,1981,1,3,1,2
+p00509,Peer-review,1,1960,1,4,2,3
+p00510,Peer-review,1,1995,2,2,5,2
+p00511,Peer-review,2,1985,1,3,4,1
+p00512,Peer-review,1,1951,1,5,5,2
+p00513,Peer-review,2,1985,1,1,3,1
+p00514,Peer-review,1,1941,3,2,3,1
+p00515,Peer-review,1,1945,3,1,1,2
+p00516,Peer-review,1,2004,1,4,4,2
+p00517,Peer-review,2,1971,2,4,3,3
+p00518,Peer-review,1,1972,1,2,2,1
+p00519,Peer-review,2,1988,1,3,1,2
+p00520,Peer-review,2,1944,1,1,4,3
+p00521,Peer-review,2,1945,5,4,1,3
+p00522,Peer-review,1,1946,5,2,3,1
+p00523,Peer-review,2,2008,1,4,3,1
+p00524,Peer-review,1,1938,3,4,1,2
+p00525,Peer-review,1,1987,3,3,2,1
+p00526,Peer-review,1,1989,1,4,4,3
+p00527,Peer-review,1,1963,3,5,5,1
+p00528,Peer-review,2,1951,2,2,3,2
+p00529,Peer-review,2,1998,3,5,3,2
+p00530,Peer-review,1,1952,1,2,4,3
+p00531,Peer-review,2,1948,1,5,5,2
+p00532,Peer-review,1,1972,2,2,2,3
+p00533,Peer-review,2,1983,4,3,1,3
+p00534,Peer-review,2,1974,3,1,3,1
+p00535,Peer-review,2,1965,1,3,4,1
+p00536,Peer-review,1,1987,3,3,1,2
+p00537,Peer-review,1,1980,1,3,5,3
+p00538,Peer-review,1,1946,1,2,4,3
+p00539,Peer-review,2,1996,3,2,4,3
+p00540,Peer-review,2,1955,1,4,2,2
+p00541,Peer-review,2,1936,1,3,1,3
+p00542,Peer-review,2,1968,3,2,3,1
+p00543,Peer-review,1,1954,3,2,2,3
+p00544,Peer-review,2,1998,2,4,3,3
+p00545,Peer-review,2,1962,1,4,3,2
+p00546,Peer-review,2,1967,4,2,3,3
+p00547,Peer-review,2,2002,2,2,5,2
+p00548,Peer-review,2,1970,1,5,5,2
+p00549,Peer-review,2,2002,4,3,5,2
+p00550,Peer-review,2,1985,2,2,4,2
+p00551,Scientist community helpers,1,1986,3,5,1,2
+p00552,Scientist community helpers,1,1970,1,3,3,3
+p00553,Scientist community helpers,2,1985,1,5,3,1
+p00554,Scientist community helpers,1,2002,2,2,4,1
+p00555,Scientist community helpers,1,1992,1,4,2,2
+p00556,Scientist community helpers,1,1989,3,4,5,3
+p00557,Scientist community helpers,2,1978,3,4,4,1
+p00558,Scientist community helpers,2,1990,5,2,3,1
+p00559,Scientist community helpers,2,1987,3,3,2,3
+p00560,Scientist community helpers,2,1955,1,3,4,3
+p00561,Scientist community helpers,2,1994,1,5,4,1
+p00562,Scientist community helpers,2,2004,1,3,2,2
+p00563,Scientist community helpers,1,1962,4,3,4,3
+p00564,Scientist community helpers,2,1957,2,2,4,2
+p00565,Scientist community helpers,2,1994,3,2,3,2
+p00566,Scientist community helpers,1,1982,1,2,2,3
+p00567,Scientist community helpers,2,1973,5,1,4,2
+p00568,Scientist community helpers,2,1947,1,1,5,2
+p00569,Scientist community helpers,1,1963,1,2,5,3
+p00570,Scientist community helpers,2,1984,1,2,4,2
+p00571,Scientist community helpers,1,2007,5,3,1,1
+p00572,Scientist community helpers,1,1969,2,4,2,3
+p00573,Scientist community helpers,2,1943,2,5,4,1
+p00574,Scientist community helpers,1,1991,1,2,2,1
+p00575,Scientist community helpers,1,1937,1,3,3,1
+p00576,Scientist community helpers,1,1973,3,1,4,1
+p00577,Scientist community helpers,2,1955,1,4,2,1
+p00578,Scientist community helpers,1,1952,3,1,1,1
+p00579,Scientist community helpers,2,1941,1,5,1,3
+p00580,Scientist community helpers,2,1941,2,5,1,3
+p00581,Scientist community helpers,1,2008,2,3,5,2
+p00582,Scientist community helpers,2,1938,1,5,5,1
+p00583,Scientist community helpers,2,1999,1,2,4,3
+p00584,Scientist community helpers,3,1937,1,4,1,3
+p00585,Scientist community helpers,2,1993,1,2,1,3
+p00586,Scientist community helpers,1,1999,1,3,2,3
+p00587,Scientist community helpers,2,1962,1,2,3,1
+p00588,Scientist community helpers,2,1993,2,2,2,3
+p00589,Scientist community helpers,1,1989,1,2,3,1
+p00590,Scientist community helpers,1,1968,3,5,2,3
+p00591,Scientist community helpers,1,1970,1,3,1,3
+p00592,Scientist community helpers,1,1987,1,2,5,2
+p00593,Scientist community helpers,1,1979,1,4,4,2
+p00594,Scientist community helpers,1,1973,1,1,2,3
+p00595,Scientist community helpers,1,1945,1,3,1,3
+p00596,Scientist community helpers,2,1979,1,2,2,2
+p00597,Scientist community helpers,1,2003,2,3,4,2
+p00598,Scientist community helpers,1,1938,5,2,4,2
+p00599,Scientist community helpers,2,1940,2,3,3,2
+p00600,Scientist community helpers,2,1967,1,3,5,2
+p00601,Consensus,1,1983,3,5,1,3
+p00602,Consensus,1,1993,2,2,2,2
+p00603,Consensus,2,1963,1,2,1,3
+p00604,Consensus,1,1972,3,1,1,3
+p00605,Consensus,2,1998,4,2,1,3
+p00606,Consensus,2,1975,1,1,4,3
+p00607,Consensus,1,1995,2,3,3,1
+p00608,Consensus,2,1994,3,2,4,1
+p00609,Consensus,2,1956,2,1,3,1
+p00610,Consensus,2,2000,1,3,1,1
+p00611,Consensus,2,1972,3,3,4,1
+p00612,Consensus,2,1967,3,5,4,3
+p00613,Consensus,2,1976,3,3,5,2
+p00614,Consensus,2,1955,3,4,4,1
+p00615,Consensus,2,2001,4,1,3,2
+p00616,Consensus,2,1996,3,3,1,1
+p00617,Consensus,2,1970,1,2,3,3
+p00618,Consensus,1,1988,1,2,4,3
+p00619,Consensus,2,1984,1,3,3,3
+p00620,Consensus,2,1969,3,4,4,3
+p00621,Consensus,2,1985,1,3,4,3
+p00622,Consensus,2,1971,1,5,1,1
+p00623,Consensus,1,1999,1,2,1,1
+p00624,Consensus,2,1990,1,4,3,3
+p00625,Consensus,2,1946,1,4,5,2
+p00626,Consensus,2,1999,3,3,4,2
+p00627,Consensus,1,1979,1,3,4,2
+p00628,Consensus,2,1996,1,1,2,3
+p00629,Consensus,1,1955,3,2,5,2
+p00630,Consensus,1,1996,1,2,1,2
+p00631,Consensus,2,1941,1,3,4,1
+p00632,Consensus,2,1990,3,4,5,2
+p00633,Consensus,2,1972,1,2,3,3
+p00634,Consensus,1,1985,1,5,3,1
+p00635,Consensus,1,1959,1,4,2,2
+p00636,Consensus,1,2003,4,2,5,3
+p00637,Consensus,2,1951,1,2,2,1
+p00638,Consensus,2,1940,1,2,5,3
+p00639,Consensus,1,1972,3,5,5,2
+p00640,Consensus,2,1982,4,5,3,3
+p00641,Consensus,1,1958,3,2,3,2
+p00642,Consensus,2,1965,1,4,1,3
+p00643,Consensus,1,1952,1,4,3,1
+p00644,Consensus,1,1983,1,2,3,3
+p00645,Consensus,1,1989,1,4,3,2
+p00646,Consensus,1,1987,2,2,1,1
+p00647,Consensus,2,1990,1,4,4,2
+p00648,Consensus,2,2002,5,4,3,3
+p00649,Consensus,1,1957,3,1,1,1
+p00650,Consensus,1,1992,2,3,2,2
+p00651,Portrait Prof. Cherry,2,1967,1,3,2,3
+p00652,Portrait Prof. Cherry,2,1972,2,2,4,2
+p00653,Portrait Prof. Cherry,2,1974,1,1,4,2
+p00654,Portrait Prof. Cherry,1,1939,3,2,4,3
+p00655,Portrait Prof. Cherry,1,1964,1,2,4,3
+p00656,Portrait Prof. Cherry,1,1975,1,5,3,3
+p00657,Portrait Prof. Cherry,1,1953,3,2,2,1
+p00658,Portrait Prof. Cherry,1,1943,1,2,1,3
+p00659,Portrait Prof. Cherry,2,1981,1,6,1,3
+p00660,Portrait Prof. Cherry,1,2002,1,2,4,1
+p00661,Portrait Prof. Cherry,1,1966,1,5,5,2
+p00662,Portrait Prof. Cherry,1,1937,1,5,4,1
+p00663,Portrait Prof. Cherry,2,1971,3,3,4,2
+p00664,Portrait Prof. Cherry,2,1951,3,3,3,1
+p00665,Portrait Prof. Cherry,2,1996,3,2,2,2
+p00666,Portrait Prof. Cherry,2,1974,1,1,3,2
+p00667,Portrait Prof. Cherry,2,1996,1,5,3,1
+p00668,Portrait Prof. Cherry,1,1946,1,2,3,1
+p00669,Portrait Prof. Cherry,2,1937,3,2,4,2
+p00670,Portrait Prof. Cherry,2,1993,1,2,4,3
+p00671,Portrait Prof. Cherry,2,1987,1,2,5,1
+p00672,Portrait Prof. Cherry,1,1957,3,4,2,1
+p00673,Portrait Prof. Cherry,1,1976,3,3,3,3
+p00674,Portrait Prof. Cherry,2,2007,5,1,4,1
+p00675,Portrait Prof. Cherry,2,1978,1,3,1,3
+p00676,Portrait Prof. Cherry,2,1954,1,4,1,2
+p00677,Portrait Prof. Cherry,2,1950,1,3,5,3
+p00678,Portrait Prof. Cherry,1,1997,4,3,2,3
+p00679,Portrait Prof. Cherry,2,2008,1,2,4,2
+p00680,Portrait Prof. Cherry,2,2004,1,2,5,3
+p00681,Portrait Prof. Cherry,2,1970,1,1,1,1
+p00682,Portrait Prof. Cherry,2,1967,3,1,2,1
+p00683,Portrait Prof. Cherry,1,1980,1,5,4,3
+p00684,Portrait Prof. Cherry,2,1952,1,3,4,1
+p00685,Portrait Prof. Cherry,1,1997,1,4,2,1
+p00686,Portrait Prof. Cherry,1,1985,3,3,5,1
+p00687,Portrait Prof. Cherry,1,1974,1,3,1,3
+p00688,Portrait Prof. Cherry,2,1994,2,3,4,2
+p00689,Portrait Prof. Cherry,2,2000,1,4,4,1
+p00690,Portrait Prof. Cherry,2,1990,1,3,1,3
+p00691,Portrait Prof. Cherry,1,2008,1,1,3,3
+p00692,Portrait Prof. Cherry,2,1973,2,1,2,3
+p00693,Portrait Prof. Cherry,2,2005,4,4,3,3
+p00694,Portrait Prof. Cherry,2,1985,1,3,4,3
+p00695,Portrait Prof. Cherry,2,1996,3,1,2,2
+p00696,Portrait Prof. Cherry,2,2005,1,3,2,3
+p00697,Portrait Prof. Cherry,2,1997,3,4,3,3
+p00698,Portrait Prof. Cherry,2,1953,1,2,3,2
+p00699,Portrait Prof. Cherry,1,1999,1,2,5,2
+p00700,Portrait Prof. Cherry,2,1984,3,2,2,2
+p00701,Model accuracy,2,1988,1,5,3,2
+p00702,Model accuracy,2,1957,1,6,2,2
+p00703,Model accuracy,1,1983,3,5,5,3
+p00704,Model accuracy,2,1972,1,1,2,1
+p00705,Model accuracy,1,1987,1,2,3,3
+p00706,Model accuracy,2,1995,3,2,5,3
+p00707,Model accuracy,1,1967,2,1,4,2
+p00708,Model accuracy,2,1937,1,4,3,3
+p00709,Model accuracy,2,1959,3,5,4,3
+p00710,Model accuracy,1,2000,1,2,3,1
+p00711,Model accuracy,3,1997,5,4,3,1
+p00712,Model accuracy,1,1984,1,1,3,1
+p00713,Model accuracy,1,1995,1,4,4,2
+p00714,Model accuracy,2,2002,1,3,4,1
+p00715,Model accuracy,1,2002,4,1,4,2
+p00716,Model accuracy,1,1991,2,4,1,2
+p00717,Model accuracy,1,1941,1,1,5,1
+p00718,Model accuracy,2,1984,1,4,2,3
+p00719,Model accuracy,1,2004,3,2,3,1
+p00720,Model accuracy,1,1988,1,4,3,3
+p00721,Model accuracy,2,1944,1,3,4,1
+p00722,Model accuracy,1,2004,3,2,3,3
+p00723,Model accuracy,1,1998,3,4,5,1
+p00724,Model accuracy,1,1946,5,3,4,3
+p00725,Model accuracy,2,1972,1,3,3,3
+p00726,Model accuracy,2,2005,1,3,4,1
+p00727,Model accuracy,2,1976,1,5,3,3
+p00728,Model accuracy,1,1967,5,6,5,3
+p00729,Model accuracy,2,1991,2,1,3,3
+p00730,Model accuracy,2,1971,1,3,3,2
+p00731,Model accuracy,2,1974,1,2,3,3
+p00732,Model accuracy,2,1957,4,5,3,3
+p00733,Model accuracy,2,1946,4,2,3,3
+p00734,Model accuracy,2,2003,1,1,2,3
+p00735,Model accuracy,1,1957,4,5,5,1
+p00736,Model accuracy,1,1963,1,6,4,3
+p00737,Model accuracy,1,1972,2,2,4,2
+p00738,Model accuracy,1,1972,2,2,3,2
+p00739,Model accuracy,1,2005,3,1,2,2
+p00740,Model accuracy,2,1960,1,5,5,3
+p00741,Model accuracy,2,1976,4,3,4,3
+p00742,Model accuracy,1,1943,2,4,3,2
+p00743,Model accuracy,1,1941,1,3,5,3
+p00744,Model accuracy,1,1988,3,3,3,3
+p00745,Model accuracy,1,2004,4,4,2,1
+p00746,Model accuracy,1,1982,1,2,5,2
+p00747,Model accuracy,1,1963,2,5,3,2
+p00748,Model accuracy,1,1996,2,4,2,2
+p00749,Model accuracy,2,1985,3,2,4,1
+p00750,Model accuracy,1,1946,1,3,4,2
+p00751,Interview Prof. Sebille,2,1954,1,2,2,3
+p00752,Interview Prof. Sebille,2,1961,1,4,3,2
+p00753,Interview Prof. Sebille,1,1952,1,5,5,1
+p00754,Interview Prof. Sebille,1,1966,3,3,1,3
+p00755,Interview Prof. Sebille,2,1987,1,3,3,1
+p00756,Interview Prof. Sebille,2,1958,1,4,1,1
+p00757,Interview Prof. Sebille,1,1981,1,3,3,2
+p00758,Interview Prof. Sebille,1,2007,1,4,4,3
+p00759,Interview Prof. Sebille,2,1969,5,4,2,1
+p00760,Interview Prof. Sebille,1,1956,1,1,3,2
+p00761,Interview Prof. Sebille,1,1994,3,2,3,1
+p00762,Interview Prof. Sebille,1,1996,3,3,5,2
+p00763,Interview Prof. Sebille,2,1967,3,3,5,1
+p00764,Interview Prof. Sebille,1,1972,1,3,3,3
+p00765,Interview Prof. Sebille,2,1979,1,2,2,1
+p00766,Interview Prof. Sebille,1,1969,3,4,5,2
+p00767,Interview Prof. Sebille,2,1988,1,4,4,1
+p00768,Interview Prof. Sebille,2,2004,1,1,4,2
+p00769,Interview Prof. Sebille,2,1947,3,2,5,3
+p00770,Interview Prof. Sebille,2,1974,2,3,4,3
+p00771,Interview Prof. Sebille,1,1976,3,5,1,2
+p00772,Interview Prof. Sebille,1,1971,1,2,4,3
+p00773,Interview Prof. Sebille,1,1955,1,4,2,2
+p00774,Interview Prof. Sebille,2,1979,1,3,5,3
+p00775,Interview Prof. Sebille,2,1956,1,1,5,2
+p00776,Interview Prof. Sebille,1,1957,1,2,4,3
+p00777,Interview Prof. Sebille,2,1952,3,5,1,2
+p00778,Interview Prof. Sebille,2,1968,3,2,5,3
+p00779,Interview Prof. Sebille,3,1945,1,1,3,3
+p00780,Interview Prof. Sebille,2,2004,2,3,1,2
+p00781,Interview Prof. Sebille,2,2000,3,1,4,3
+p00782,Interview Prof. Sebille,1,1993,1,2,3,1
+p00783,Interview Prof. Sebille,1,2004,5,3,1,2
+p00784,Interview Prof. Sebille,1,1977,3,2,2,1
+p00785,Interview Prof. Sebille,2,1976,1,1,5,1
+p00786,Interview Prof. Sebille,1,1995,1,3,3,3
+p00787,Interview Prof. Sebille,1,1947,1,2,4,3
+p00788,Interview Prof. Sebille,2,2001,1,4,4,1
+p00789,Interview Prof. Sebille,2,1986,1,2,2,3
+p00790,Interview Prof. Sebille,1,1967,1,5,2,3
+p00791,Interview Prof. Sebille,1,1989,1,2,3,1
+p00792,Interview Prof. Sebille,2,1947,1,3,4,1
+p00793,Interview Prof. Sebille,2,1980,1,3,3,3
+p00794,Interview Prof. Sebille,1,1974,1,4,3,3
+p00795,Interview Prof. Sebille,1,1984,3,2,4,3
+p00796,Interview Prof. Sebille,2,1940,2,3,3,3
+p00797,Interview Prof. Sebille,1,2002,1,4,4,2
+p00798,Interview Prof. Sebille,1,1971,1,2,3,3
+p00799,Interview Prof. Sebille,1,1942,1,3,3,3
+p00800,Interview Prof. Sebille,2,1998,1,4,4,3
+p00801,Extreme weather predictions,2,1944,1,1,1,3
+p00802,Extreme weather predictions,2,1994,1,5,5,1
+p00803,Extreme weather predictions,1,1976,1,1,3,3
+p00804,Extreme weather predictions,1,1970,1,3,4,2
+p00805,Extreme weather predictions,2,2002,1,3,2,3
+p00806,Extreme weather predictions,1,2008,1,4,3,2
+p00807,Extreme weather predictions,1,1964,3,5,5,3
+p00808,Extreme weather predictions,1,1947,1,3,3,2
+p00809,Extreme weather predictions,1,1999,1,4,4,1
+p00810,Extreme weather predictions,1,1948,5,3,4,1
+p00811,Extreme weather predictions,1,1970,3,3,5,3
+p00812,Extreme weather predictions,1,1988,4,1,3,3
+p00813,Extreme weather predictions,2,1964,1,3,4,3
+p00814,Extreme weather predictions,1,1981,1,3,4,2
+p00815,Extreme weather predictions,1,1941,1,4,3,2
+p00816,Extreme weather predictions,1,1958,1,2,1,4
+p00817,Extreme weather predictions,1,1947,1,2,1,3
+p00818,Extreme weather predictions,1,1987,3,1,1,1
+p00819,Extreme weather predictions,2,1979,1,2,4,1
+p00820,Extreme weather predictions,2,2000,1,1,1,3
+p00821,Extreme weather predictions,2,2001,1,3,4,3
+p00822,Extreme weather predictions,2,1999,1,4,4,1
+p00823,Extreme weather predictions,1,2002,1,5,5,1
+p00824,Extreme weather predictions,1,1975,1,5,1,3
+p00825,Extreme weather predictions,1,1986,1,5,1,2
+p00826,Extreme weather predictions,1,1983,4,5,2,1
+p00827,Extreme weather predictions,2,1998,1,4,2,3
+p00828,Extreme weather predictions,1,1950,3,2,3,3
+p00829,Extreme weather predictions,1,1966,1,4,2,3
+p00830,Extreme weather predictions,1,1996,1,5,4,3
+p00831,Extreme weather predictions,1,1946,5,1,3,2
+p00832,Extreme weather predictions,2,1946,5,5,4,1
+p00833,Extreme weather predictions,1,1967,1,6,4,3
+p00834,Extreme weather predictions,1,1969,1,1,4,2
+p00835,Extreme weather predictions,1,1996,3,2,1,3
+p00836,Extreme weather predictions,1,1990,1,2,4,1
+p00837,Extreme weather predictions,1,1967,1,1,1,3
+p00838,Extreme weather predictions,2,1966,1,4,5,3
+p00839,Extreme weather predictions,1,1985,1,1,4,3
+p00840,Extreme weather predictions,2,1975,3,4,3,1
+p00841,Extreme weather predictions,2,1940,1,3,5,2
+p00842,Extreme weather predictions,2,1996,5,1,3,3
+p00843,Extreme weather predictions,2,2001,1,2,3,3
+p00844,Extreme weather predictions,2,1977,4,3,2,1
+p00845,Extreme weather predictions,1,1970,1,1,5,1
+p00846,Extreme weather predictions,2,1984,1,3,5,2
+p00847,Extreme weather predictions,1,1965,1,4,3,1
+p00848,Extreme weather predictions,1,1973,2,5,1,3
+p00849,Extreme weather predictions,2,1965,1,1,5,3
+p00850,Extreme weather predictions,1,1986,1,1,2,3
