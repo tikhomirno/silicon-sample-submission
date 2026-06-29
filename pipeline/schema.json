@@ -1,0 +1,1105 @@
+{
+  "meta": {
+    "tier": 1,
+    "generated_by": "pipeline/build_schema.py",
+    "generated_from": [
+      "codebook.csv",
+      "raw_data_deposit/example_raw_export.csv (column order only)",
+      "scripts/lib/clean_lib.R (demographic maps + composites)"
+    ],
+    "n_raw_export_columns": 52,
+    "n_elicited_items": 44,
+    "n_demographics": 6,
+    "n_conditions": 17,
+    "n_interventions": 16,
+    "scored_outcomes": [
+      "trust_multidimensional",
+      "trust_post",
+      "distrust_post",
+      "funding_perceptions",
+      "policy_role_mean",
+      "inst_trust_mean",
+      "belief_post",
+      "concern_mean",
+      "policy_general",
+      "policy_specific_mean",
+      "behavior_mean",
+      "donation_ams",
+      "newsletter_signup"
+    ],
+    "how_to_use": "Write one CSV row per synthetic respondent containing exactly `raw_export_columns`. Assign `design_columns` + `demographics`; ask the model for `elicited_items` on the stated scale. Save into raw_data_deposit/ and run `make clean` -> it builds the scored outcomes and the analysis-ready predictions file."
+  },
+  "design_columns": [
+    {
+      "column": "profile_id",
+      "role": "assigned",
+      "description": "Unique respondent id you assign (unique within the submission)."
+    },
+    {
+      "column": "condition",
+      "role": "assigned",
+      "description": "One of the 17 canonical condition titles (control + 16 interventions)."
+    }
+  ],
+  "conditions": {
+    "all": [
+      "control",
+      "Corporate reliance",
+      "Social justice",
+      "Interview Prof. Maraun",
+      "Funding",
+      "Oil industry misinformation",
+      "Measurement & modeling (1)",
+      "Former skeptics",
+      "High public trust",
+      "Measurement & modeling (2)",
+      "Peer-review",
+      "Scientist community helpers",
+      "Consensus",
+      "Portrait Prof. Cherry",
+      "Model accuracy",
+      "Interview Prof. Sebille",
+      "Extreme weather predictions"
+    ],
+    "control": "control",
+    "interventions": [
+      "Corporate reliance",
+      "Social justice",
+      "Interview Prof. Maraun",
+      "Funding",
+      "Oil industry misinformation",
+      "Measurement & modeling (1)",
+      "Former skeptics",
+      "High public trust",
+      "Measurement & modeling (2)",
+      "Peer-review",
+      "Scientist community helpers",
+      "Consensus",
+      "Portrait Prof. Cherry",
+      "Model accuracy",
+      "Interview Prof. Sebille",
+      "Extreme weather predictions"
+    ],
+    "note": "Exact strings required by clean.R/check.R. Block 4 injects the matching intervention stimulus text; control gets none."
+  },
+  "demographics": [
+    {
+      "qualtrics_label": "gender",
+      "target_label": "gender",
+      "role": "assigned",
+      "question_text": "Gender",
+      "raw_options": "Male / Female / Other",
+      "scale": {
+        "kind": "categorical",
+        "codes": {
+          "1": "Male",
+          "2": "Female",
+          "3": "Other"
+        }
+      }
+    },
+    {
+      "qualtrics_label": "year_birth",
+      "target_label": "year_birth",
+      "role": "assigned",
+      "question_text": "Year of birth (used to derive age and age_band)",
+      "raw_options": "Free numeric",
+      "scale": {
+        "kind": "year",
+        "min": 1926,
+        "max": 2008
+      }
+    },
+    {
+      "qualtrics_label": "race",
+      "target_label": "race",
+      "role": "assigned",
+      "question_text": "Race / ethnicity",
+      "raw_options": "White / Black / Hispanic / Asian / Other",
+      "scale": {
+        "kind": "categorical",
+        "codes": {
+          "1": "White / Caucasian",
+          "2": "Black / African American",
+          "3": "Hispanic / Latino",
+          "4": "Asian / Asian American",
+          "5": "Other"
+        }
+      }
+    },
+    {
+      "qualtrics_label": "education",
+      "target_label": "education",
+      "role": "assigned",
+      "question_text": "Highest level of education completed",
+      "raw_options": "6 categories (less than HS … Ph.D.)",
+      "scale": {
+        "kind": "categorical",
+        "codes": {
+          "1": "Less than high school",
+          "2": "High school diploma / GED",
+          "3": "Some college or Associate's degree",
+          "4": "Bachelor's degree",
+          "5": "Master's degree / Professional degree",
+          "6": "Doctorate degree / Ph.D."
+        }
+      }
+    },
+    {
+      "qualtrics_label": "income",
+      "target_label": "income",
+      "role": "assigned",
+      "question_text": "Household income",
+      "raw_options": "5 brackets (<$30k … ≥$168k)",
+      "scale": {
+        "kind": "categorical",
+        "codes": {
+          "1": "Less than $30,000",
+          "2": "$30,000 to $55,999",
+          "3": "$56,000 to $99,999",
+          "4": "$100,000 to $167,999",
+          "5": "$168,000 or more"
+        }
+      }
+    },
+    {
+      "qualtrics_label": "party",
+      "target_label": "party",
+      "role": "assigned",
+      "question_text": "Partisan identity",
+      "raw_options": "Republican / Democrat / Independent / Other",
+      "scale": {
+        "kind": "categorical",
+        "codes": {
+          "1": "Republican",
+          "2": "Democrat",
+          "3": "Independent",
+          "4": "Other"
+        }
+      }
+    }
+  ],
+  "elicited_items": [
+    {
+      "qualtrics_label": "trust_competent_1",
+      "target_label": "trust_competence_1",
+      "role": "elicited",
+      "group": "trust_competence",
+      "question_text": "How incompetent or competent are most climate scientists?",
+      "scale": {
+        "kind": "slider",
+        "min": 0,
+        "max": 100,
+        "raw_options": "0 = Very incompetent … 100 = Very competent",
+        "low_anchor": "Very incompetent",
+        "high_anchor": "Very competent"
+      }
+    },
+    {
+      "qualtrics_label": "trust_intelligent_1",
+      "target_label": "trust_competence_2",
+      "role": "elicited",
+      "group": "trust_competence",
+      "question_text": "How unintelligent or intelligent are most climate scientists?",
+      "scale": {
+        "kind": "slider",
+        "min": 0,
+        "max": 100,
+        "raw_options": "0 = Very unintelligent … 100 = Very intelligent",
+        "low_anchor": "Very unintelligent",
+        "high_anchor": "Very intelligent"
+      }
+    },
+    {
+      "qualtrics_label": "trust_qualified_1",
+      "target_label": "trust_competence_3",
+      "role": "elicited",
+      "group": "trust_competence",
+      "question_text": "How unqualified or qualified are most climate scientists?",
+      "scale": {
+        "kind": "slider",
+        "min": 0,
+        "max": 100,
+        "raw_options": "0 = Very unqualified … 100 = Very qualified",
+        "low_anchor": "Very unqualified",
+        "high_anchor": "Very qualified"
+      }
+    },
+    {
+      "qualtrics_label": "trust_honest_1",
+      "target_label": "trust_integrity_1",
+      "role": "elicited",
+      "group": "trust_integrity",
+      "question_text": "How dishonest or honest are most climate scientists?",
+      "scale": {
+        "kind": "slider",
+        "min": 0,
+        "max": 100,
+        "raw_options": "0 = Very dishonest … 100 = Very honest",
+        "low_anchor": "Very dishonest",
+        "high_anchor": "Very honest"
+      }
+    },
+    {
+      "qualtrics_label": "trust_ethical_1",
+      "target_label": "trust_integrity_2",
+      "role": "elicited",
+      "group": "trust_integrity",
+      "question_text": "How unethical or ethical are most climate scientists?",
+      "scale": {
+        "kind": "slider",
+        "min": 0,
+        "max": 100,
+        "raw_options": "0 = Very unethical … 100 = Very ethical",
+        "low_anchor": "Very unethical",
+        "high_anchor": "Very ethical"
+      }
+    },
+    {
+      "qualtrics_label": "trust_sincere_1",
+      "target_label": "trust_integrity_3",
+      "role": "elicited",
+      "group": "trust_integrity",
+      "question_text": "How insincere or sincere are most climate scientists?",
+      "scale": {
+        "kind": "slider",
+        "min": 0,
+        "max": 100,
+        "raw_options": "0 = Very insincere … 100 = Very sincere",
+        "low_anchor": "Very insincere",
+        "high_anchor": "Very sincere"
+      }
+    },
+    {
+      "qualtrics_label": "trust_concerned_1",
+      "target_label": "trust_benevolence_1",
+      "role": "elicited",
+      "group": "trust_benevolence",
+      "question_text": "How unconcerned or concerned are most climate scientists about people’s wellbeing?",
+      "scale": {
+        "kind": "slider",
+        "min": 0,
+        "max": 100,
+        "raw_options": "0 = Very unconcerned … 100 = Very concerned",
+        "low_anchor": "Very unconcerned",
+        "high_anchor": "Very concerned"
+      }
+    },
+    {
+      "qualtrics_label": "trust_improve_1",
+      "target_label": "trust_benevolence_2",
+      "role": "elicited",
+      "group": "trust_benevolence",
+      "question_text": "How uneager or eager are most climate scientists to improve others’ lives?",
+      "scale": {
+        "kind": "slider",
+        "min": 0,
+        "max": 100,
+        "raw_options": "0 = Very uneager … 100 = Very eager",
+        "low_anchor": "Very uneager",
+        "high_anchor": "Very eager"
+      }
+    },
+    {
+      "qualtrics_label": "trust_considerate_1",
+      "target_label": "trust_benevolence_3",
+      "role": "elicited",
+      "group": "trust_benevolence",
+      "question_text": "How inconsiderate or considerate are most climate scientists of others’ interests?",
+      "scale": {
+        "kind": "slider",
+        "min": 0,
+        "max": 100,
+        "raw_options": "0 = Very inconsiderate … 100 = Very considerate",
+        "low_anchor": "Very inconsiderate",
+        "high_anchor": "Very considerate"
+      }
+    },
+    {
+      "qualtrics_label": "trust_feedback_1",
+      "target_label": "trust_openness_1",
+      "role": "elicited",
+      "group": "trust_openness",
+      "question_text": "How open, if at all, are most climate scientists to feedback?",
+      "scale": {
+        "kind": "slider",
+        "min": 0,
+        "max": 100,
+        "raw_options": "0 = Not open at all … 100 = Very open",
+        "low_anchor": "Not open at all",
+        "high_anchor": "Very open"
+      }
+    },
+    {
+      "qualtrics_label": "trust_transparent_1",
+      "target_label": "trust_openness_2",
+      "role": "elicited",
+      "group": "trust_openness",
+      "question_text": "How unwilling or willing are most climate scientists to be transparent?",
+      "scale": {
+        "kind": "slider",
+        "min": 0,
+        "max": 100,
+        "raw_options": "0 = Very unwilling … 100 = Very willing",
+        "low_anchor": "Very unwilling",
+        "high_anchor": "Very willing"
+      }
+    },
+    {
+      "qualtrics_label": "trust_attention_1",
+      "target_label": "trust_openness_3",
+      "role": "elicited",
+      "group": "trust_openness",
+      "question_text": "How much or how little attention do climate scientists pay to other people's views?",
+      "scale": {
+        "kind": "slider",
+        "min": 0,
+        "max": 100,
+        "raw_options": "0 = Very little attention … 100 = A great deal of attention",
+        "low_anchor": "Very little attention",
+        "high_anchor": "A great deal of attention"
+      }
+    },
+    {
+      "qualtrics_label": "trust_post_1",
+      "target_label": "trust_post",
+      "role": "elicited",
+      "group": "trust",
+      "question_text": "How much do you trust climate scientists?",
+      "scale": {
+        "kind": "slider",
+        "min": 0,
+        "max": 100,
+        "raw_options": "0 = not at all … 100 = very strongly",
+        "low_anchor": "not at all",
+        "high_anchor": "very strongly"
+      }
+    },
+    {
+      "qualtrics_label": "distrust_1",
+      "target_label": "distrust_post",
+      "role": "elicited",
+      "group": "trust",
+      "question_text": "How much do you distrust climate scientists?",
+      "scale": {
+        "kind": "slider",
+        "min": 0,
+        "max": 100,
+        "raw_options": "0 = not at all … 100 = very strongly",
+        "low_anchor": "not at all",
+        "high_anchor": "very strongly"
+      }
+    },
+    {
+      "qualtrics_label": "funding_5",
+      "target_label": "funding_perceptions",
+      "role": "elicited",
+      "group": "funding",
+      "question_text": "Do you think the federal government is spending too much, too little or about the right amount of money on climate change research? (reverse-coded in cleaning)",
+      "scale": {
+        "kind": "slider",
+        "min": 0,
+        "max": 100,
+        "raw_options": "0 = far too little, 50 = about right, 100 = far too much",
+        "low_anchor": "far too little",
+        "high_anchor": "far too much",
+        "anchors": [
+          {
+            "value": 0,
+            "label": "far too little"
+          },
+          {
+            "value": 50,
+            "label": "about right"
+          },
+          {
+            "value": 100,
+            "label": "far too much"
+          }
+        ],
+        "reverse_coded_in_cleaning": "funding_perceptions = 100 - funding_5"
+      }
+    },
+    {
+      "qualtrics_label": "belief_post_1",
+      "target_label": "belief_post",
+      "role": "elicited",
+      "group": "belief",
+      "question_text": "How accurate do you think this statement is? \"Human activities are causing climate change.\"",
+      "scale": {
+        "kind": "slider",
+        "min": 0,
+        "max": 100,
+        "raw_options": "0 = not at all accurate … 100 = extremely accurate",
+        "low_anchor": "not at all accurate",
+        "high_anchor": "extremely accurate"
+      }
+    },
+    {
+      "qualtrics_label": "policy_general_1",
+      "target_label": "policy_general",
+      "role": "elicited",
+      "group": "policy_general",
+      "question_text": "How much do you oppose or support: \"The U.S. government should do more to reduce global warming\"",
+      "scale": {
+        "kind": "slider",
+        "min": 0,
+        "max": 100,
+        "raw_options": "0 = Strongly oppose … 100 = Strongly support",
+        "low_anchor": "Strongly oppose",
+        "high_anchor": "Strongly support"
+      }
+    },
+    {
+      "qualtrics_label": "donation",
+      "target_label": "donation_ams",
+      "role": "elicited",
+      "group": "behavioral",
+      "question_text": "Of the $10 bonus, how much would you like to donate to the American Meteorological Society (AMS)?",
+      "scale": {
+        "kind": "integer",
+        "min": 0,
+        "max": 10,
+        "unit": "USD",
+        "raw_options": "$0 to $10"
+      }
+    },
+    {
+      "qualtrics_label": "newsletter",
+      "target_label": "newsletter_signup",
+      "role": "elicited",
+      "group": "behavioral",
+      "question_text": "Did you subscribe to the \"Talking Climate\" newsletter on the previous page? (recoded 1/0 in cleaning)",
+      "scale": {
+        "kind": "binary",
+        "options": [
+          "Yes",
+          "No"
+        ],
+        "recode": {
+          "Yes": 1,
+          "No": 0
+        },
+        "raw_options": "Yes / No"
+      }
+    },
+    {
+      "qualtrics_label": "inst_trust_epa_1",
+      "target_label": "inst_trust_epa",
+      "role": "elicited",
+      "group": "inst_trust",
+      "question_text": "How much do you trust the following institutions? — Environmental Protection Agency (EPA)",
+      "scale": {
+        "kind": "slider",
+        "min": 0,
+        "max": 100,
+        "raw_options": "0 = not at all … 100 = very strongly",
+        "low_anchor": "not at all",
+        "high_anchor": "very strongly"
+      }
+    },
+    {
+      "qualtrics_label": "inst_trust_nasa_1",
+      "target_label": "inst_trust_nasa",
+      "role": "elicited",
+      "group": "inst_trust",
+      "question_text": "How much do you trust the following institutions? — National Aeronautics and Space Administration (NASA)",
+      "scale": {
+        "kind": "slider",
+        "min": 0,
+        "max": 100,
+        "raw_options": "0 = not at all … 100 = very strongly",
+        "low_anchor": "not at all",
+        "high_anchor": "very strongly"
+      }
+    },
+    {
+      "qualtrics_label": "inst_trust_noaa_1",
+      "target_label": "inst_trust_noaa",
+      "role": "elicited",
+      "group": "inst_trust",
+      "question_text": "How much do you trust the following institutions? — National Oceanic and Atmospheric Administration (NOAA)",
+      "scale": {
+        "kind": "slider",
+        "min": 0,
+        "max": 100,
+        "raw_options": "0 = not at all … 100 = very strongly",
+        "low_anchor": "not at all",
+        "high_anchor": "very strongly"
+      }
+    },
+    {
+      "qualtrics_label": "inst_trust_uni_1",
+      "target_label": "inst_trust_universities",
+      "role": "elicited",
+      "group": "inst_trust",
+      "question_text": "How much do you trust the following institutions? — Universities and colleges",
+      "scale": {
+        "kind": "slider",
+        "min": 0,
+        "max": 100,
+        "raw_options": "0 = not at all … 100 = very strongly",
+        "low_anchor": "not at all",
+        "high_anchor": "very strongly"
+      }
+    },
+    {
+      "qualtrics_label": "inst_trust_gov_1",
+      "target_label": "inst_trust_federal_gov",
+      "role": "elicited",
+      "group": "inst_trust",
+      "question_text": "How much do you trust the following institutions? — Federal government",
+      "scale": {
+        "kind": "slider",
+        "min": 0,
+        "max": 100,
+        "raw_options": "0 = not at all … 100 = very strongly",
+        "low_anchor": "not at all",
+        "high_anchor": "very strongly"
+      }
+    },
+    {
+      "qualtrics_label": "policy_1_1",
+      "target_label": "policy_role_1",
+      "role": "elicited",
+      "group": "policy_role",
+      "question_text": "To what extent do you agree or disagree: — Climate scientists should work closely with policy makers to integrate scientific results into policy-making.",
+      "scale": {
+        "kind": "slider",
+        "min": 0,
+        "max": 100,
+        "raw_options": "0 = Strongly disagree … 100 = Strongly agree",
+        "low_anchor": "Strongly disagree",
+        "high_anchor": "Strongly agree"
+      }
+    },
+    {
+      "qualtrics_label": "policy_2_1",
+      "target_label": "policy_role_2",
+      "role": "elicited",
+      "group": "policy_role",
+      "question_text": "To what extent do you agree or disagree: — Climate scientists should actively advocate for specific policies.",
+      "scale": {
+        "kind": "slider",
+        "min": 0,
+        "max": 100,
+        "raw_options": "0 = Strongly disagree … 100 = Strongly agree",
+        "low_anchor": "Strongly disagree",
+        "high_anchor": "Strongly agree"
+      }
+    },
+    {
+      "qualtrics_label": "policy_3_1",
+      "target_label": "policy_role_3",
+      "role": "elicited",
+      "group": "policy_role",
+      "question_text": "To what extent do you agree or disagree: — Climate scientists should communicate their findings to policy makers.",
+      "scale": {
+        "kind": "slider",
+        "min": 0,
+        "max": 100,
+        "raw_options": "0 = Strongly disagree … 100 = Strongly agree",
+        "low_anchor": "Strongly disagree",
+        "high_anchor": "Strongly agree"
+      }
+    },
+    {
+      "qualtrics_label": "policy_4_1",
+      "target_label": "policy_role_4",
+      "role": "elicited",
+      "group": "policy_role",
+      "question_text": "To what extent do you agree or disagree: — Climate scientists should be more involved in the policy-making process.",
+      "scale": {
+        "kind": "slider",
+        "min": 0,
+        "max": 100,
+        "raw_options": "0 = Strongly disagree … 100 = Strongly agree",
+        "low_anchor": "Strongly disagree",
+        "high_anchor": "Strongly agree"
+      }
+    },
+    {
+      "qualtrics_label": "concern_1_1",
+      "target_label": "concern_1",
+      "role": "elicited",
+      "group": "concern",
+      "question_text": "How concerned are you about climate change?",
+      "scale": {
+        "kind": "slider",
+        "min": 0,
+        "max": 100,
+        "raw_options": "0 = Not at all … 100 = Extremely",
+        "low_anchor": "Not at all",
+        "high_anchor": "Extremely"
+      }
+    },
+    {
+      "qualtrics_label": "concern_2_1",
+      "target_label": "concern_2",
+      "role": "elicited",
+      "group": "concern",
+      "question_text": "How serious a problem is climate change?",
+      "scale": {
+        "kind": "slider",
+        "min": 0,
+        "max": 100,
+        "raw_options": "0 = Not at all … 100 = Extremely",
+        "low_anchor": "Not at all",
+        "high_anchor": "Extremely"
+      }
+    },
+    {
+      "qualtrics_label": "concern_3_1",
+      "target_label": "concern_3",
+      "role": "elicited",
+      "group": "concern",
+      "question_text": "Relative to other issues facing the U.S., how important is climate change?",
+      "scale": {
+        "kind": "slider",
+        "min": 0,
+        "max": 100,
+        "raw_options": "0 = The least important issue … 100 = The most important issue",
+        "low_anchor": "The least important issue",
+        "high_anchor": "The most important issue"
+      }
+    },
+    {
+      "qualtrics_label": "policy_specific_1_1",
+      "target_label": "policy_specific_1",
+      "role": "elicited",
+      "group": "policy_specific",
+      "question_text": "How much do you support or oppose: — Raising taxes on fossil fuels (e.g., gas, oil, coal)",
+      "scale": {
+        "kind": "slider",
+        "min": 0,
+        "max": 100,
+        "raw_options": "0 = Strongly oppose … 100 = Strongly support",
+        "low_anchor": "Strongly oppose",
+        "high_anchor": "Strongly support"
+      }
+    },
+    {
+      "qualtrics_label": "policy_specific_2_1",
+      "target_label": "policy_specific_2",
+      "role": "elicited",
+      "group": "policy_specific",
+      "question_text": "How much do you support or oppose: — Expanding infrastructure for public transportation",
+      "scale": {
+        "kind": "slider",
+        "min": 0,
+        "max": 100,
+        "raw_options": "0 = Strongly oppose … 100 = Strongly support",
+        "low_anchor": "Strongly oppose",
+        "high_anchor": "Strongly support"
+      }
+    },
+    {
+      "qualtrics_label": "policy_specific_3_1",
+      "target_label": "policy_specific_3",
+      "role": "elicited",
+      "group": "policy_specific",
+      "question_text": "How much do you support or oppose: — Increasing the use of sustainable energy such as wind and solar energy",
+      "scale": {
+        "kind": "slider",
+        "min": 0,
+        "max": 100,
+        "raw_options": "0 = Strongly oppose … 100 = Strongly support",
+        "low_anchor": "Strongly oppose",
+        "high_anchor": "Strongly support"
+      }
+    },
+    {
+      "qualtrics_label": "policy_specific_4_1",
+      "target_label": "policy_specific_4",
+      "role": "elicited",
+      "group": "policy_specific",
+      "question_text": "How much do you support or oppose: — Protecting forested and land areas",
+      "scale": {
+        "kind": "slider",
+        "min": 0,
+        "max": 100,
+        "raw_options": "0 = Strongly oppose … 100 = Strongly support",
+        "low_anchor": "Strongly oppose",
+        "high_anchor": "Strongly support"
+      }
+    },
+    {
+      "qualtrics_label": "policy_specific_5_1",
+      "target_label": "policy_specific_5",
+      "role": "elicited",
+      "group": "policy_specific",
+      "question_text": "How much do you support or oppose: — Increasing taxes on carbon-intensive foods (e.g., beef and dairy products)",
+      "scale": {
+        "kind": "slider",
+        "min": 0,
+        "max": 100,
+        "raw_options": "0 = Strongly oppose … 100 = Strongly support",
+        "low_anchor": "Strongly oppose",
+        "high_anchor": "Strongly support"
+      }
+    },
+    {
+      "qualtrics_label": "policy_specific_6_1",
+      "target_label": "policy_specific_6",
+      "role": "elicited",
+      "group": "policy_specific",
+      "question_text": "How much do you support or oppose: — Investing more in green jobs and businesses",
+      "scale": {
+        "kind": "slider",
+        "min": 0,
+        "max": 100,
+        "raw_options": "0 = Strongly oppose … 100 = Strongly support",
+        "low_anchor": "Strongly oppose",
+        "high_anchor": "Strongly support"
+      }
+    },
+    {
+      "qualtrics_label": "policy_specific_7_1",
+      "target_label": "policy_specific_7",
+      "role": "elicited",
+      "group": "policy_specific",
+      "question_text": "How much do you support or oppose: — Introducing laws to keep waterways and oceans clean",
+      "scale": {
+        "kind": "slider",
+        "min": 0,
+        "max": 100,
+        "raw_options": "0 = Strongly oppose … 100 = Strongly support",
+        "low_anchor": "Strongly oppose",
+        "high_anchor": "Strongly support"
+      }
+    },
+    {
+      "qualtrics_label": "individual_meat_1",
+      "target_label": "behavior_meat",
+      "role": "elicited",
+      "group": "behavior",
+      "question_text": "How likely are you to engage in the following in the next 12 months? — Eat less meat",
+      "scale": {
+        "kind": "slider",
+        "min": 0,
+        "max": 100,
+        "raw_options": "0 = Not likely at all … 100 = Extremely likely",
+        "low_anchor": "Not likely at all",
+        "high_anchor": "Extremely likely"
+      }
+    },
+    {
+      "qualtrics_label": "individual_transport_1",
+      "target_label": "behavior_transport",
+      "role": "elicited",
+      "group": "behavior",
+      "question_text": "How likely are you to engage in the following in the next 12 months? — Walk, bicycle, carpool, or take public transportation more often instead of driving by yourself",
+      "scale": {
+        "kind": "slider",
+        "min": 0,
+        "max": 100,
+        "raw_options": "0 = Not likely at all … 100 = Extremely likely",
+        "low_anchor": "Not likely at all",
+        "high_anchor": "Extremely likely"
+      }
+    },
+    {
+      "qualtrics_label": "individual_solar_1",
+      "target_label": "behavior_solar",
+      "role": "elicited",
+      "group": "behavior",
+      "question_text": "How likely are you to engage in the following in the next 12 months? — Install a solar panel",
+      "scale": {
+        "kind": "slider",
+        "min": 0,
+        "max": 100,
+        "raw_options": "0 = Not likely at all … 100 = Extremely likely",
+        "low_anchor": "Not likely at all",
+        "high_anchor": "Extremely likely"
+      }
+    },
+    {
+      "qualtrics_label": "individual_fly_1",
+      "target_label": "behavior_fly",
+      "role": "elicited",
+      "group": "behavior",
+      "question_text": "How likely are you to engage in the following in the next 12 months? — Go on less personal (non-business) air travel",
+      "scale": {
+        "kind": "slider",
+        "min": 0,
+        "max": 100,
+        "raw_options": "0 = Not likely at all … 100 = Extremely likely",
+        "low_anchor": "Not likely at all",
+        "high_anchor": "Extremely likely"
+      }
+    },
+    {
+      "qualtrics_label": "individual_talk_1",
+      "target_label": "behavior_talk",
+      "role": "elicited",
+      "group": "behavior",
+      "question_text": "How likely are you to engage in the following in the next 12 months? — Talk to friends and family about the importance of climate change",
+      "scale": {
+        "kind": "slider",
+        "min": 0,
+        "max": 100,
+        "raw_options": "0 = Not likely at all … 100 = Extremely likely",
+        "low_anchor": "Not likely at all",
+        "high_anchor": "Extremely likely"
+      }
+    },
+    {
+      "qualtrics_label": "individual_donate_1",
+      "target_label": "behavior_donate",
+      "role": "elicited",
+      "group": "behavior",
+      "question_text": "How likely are you to engage in the following in the next 12 months? — Donate to an environmental NGO",
+      "scale": {
+        "kind": "slider",
+        "min": 0,
+        "max": 100,
+        "raw_options": "0 = Not likely at all … 100 = Extremely likely",
+        "low_anchor": "Not likely at all",
+        "high_anchor": "Extremely likely"
+      }
+    }
+  ],
+  "raw_export_columns": [
+    "condition",
+    "profile_id",
+    "gender",
+    "year_birth",
+    "race",
+    "education",
+    "income",
+    "party",
+    "donation",
+    "newsletter",
+    "trust_competent_1",
+    "trust_intelligent_1",
+    "trust_qualified_1",
+    "trust_honest_1",
+    "trust_ethical_1",
+    "trust_sincere_1",
+    "trust_concerned_1",
+    "trust_improve_1",
+    "trust_considerate_1",
+    "trust_feedback_1",
+    "trust_transparent_1",
+    "trust_attention_1",
+    "trust_post_1",
+    "distrust_1",
+    "funding_5",
+    "policy_1_1",
+    "policy_2_1",
+    "policy_3_1",
+    "policy_4_1",
+    "inst_trust_epa_1",
+    "inst_trust_nasa_1",
+    "inst_trust_noaa_1",
+    "inst_trust_uni_1",
+    "inst_trust_gov_1",
+    "belief_post_1",
+    "concern_1_1",
+    "concern_2_1",
+    "concern_3_1",
+    "policy_general_1",
+    "policy_specific_1_1",
+    "policy_specific_2_1",
+    "policy_specific_3_1",
+    "policy_specific_4_1",
+    "policy_specific_5_1",
+    "policy_specific_6_1",
+    "policy_specific_7_1",
+    "individual_meat_1",
+    "individual_transport_1",
+    "individual_solar_1",
+    "individual_fly_1",
+    "individual_talk_1",
+    "individual_donate_1"
+  ],
+  "system_columns_optional": [
+    "StartDate",
+    "EndDate",
+    "Status",
+    "IPAddress",
+    "Progress",
+    "Duration (in seconds)",
+    "Finished",
+    "RecordedDate",
+    "ResponseId",
+    "RecipientLastName",
+    "RecipientFirstName",
+    "RecipientEmail",
+    "ExternalReference",
+    "LocationLatitude",
+    "LocationLongitude",
+    "DistributionChannel",
+    "UserLanguage"
+  ],
+  "constructed": {
+    "scored_outcomes": {
+      "trust_multidimensional": {
+        "kind": "composite",
+        "note": "PRIMARY. mean of 4 subscales (competence/integrity/benevolence/openness); each subscale = mean of its 3 items.",
+        "components": [
+          "trust_competent_1",
+          "trust_intelligent_1",
+          "trust_qualified_1",
+          "trust_honest_1",
+          "trust_ethical_1",
+          "trust_sincere_1",
+          "trust_concerned_1",
+          "trust_improve_1",
+          "trust_considerate_1",
+          "trust_feedback_1",
+          "trust_transparent_1",
+          "trust_attention_1"
+        ]
+      },
+      "trust_post": {
+        "kind": "single",
+        "components": [
+          "trust_post_1"
+        ]
+      },
+      "distrust_post": {
+        "kind": "single",
+        "components": [
+          "distrust_1"
+        ]
+      },
+      "funding_perceptions": {
+        "kind": "recode",
+        "note": "funding_perceptions = 100 - funding_5",
+        "components": [
+          "funding_5"
+        ]
+      },
+      "policy_role_mean": {
+        "kind": "composite",
+        "components": [
+          "policy_1_1",
+          "policy_2_1",
+          "policy_3_1",
+          "policy_4_1"
+        ]
+      },
+      "inst_trust_mean": {
+        "kind": "composite",
+        "components": [
+          "inst_trust_epa_1",
+          "inst_trust_nasa_1",
+          "inst_trust_noaa_1",
+          "inst_trust_uni_1",
+          "inst_trust_gov_1"
+        ]
+      },
+      "belief_post": {
+        "kind": "single",
+        "components": [
+          "belief_post_1"
+        ]
+      },
+      "concern_mean": {
+        "kind": "composite",
+        "components": [
+          "concern_1_1",
+          "concern_2_1",
+          "concern_3_1"
+        ]
+      },
+      "policy_general": {
+        "kind": "single",
+        "components": [
+          "policy_general_1"
+        ]
+      },
+      "policy_specific_mean": {
+        "kind": "composite",
+        "components": [
+          "policy_specific_1_1",
+          "policy_specific_2_1",
+          "policy_specific_3_1",
+          "policy_specific_4_1",
+          "policy_specific_5_1",
+          "policy_specific_6_1",
+          "policy_specific_7_1"
+        ]
+      },
+      "behavior_mean": {
+        "kind": "composite",
+        "components": [
+          "individual_meat_1",
+          "individual_transport_1",
+          "individual_solar_1",
+          "individual_fly_1",
+          "individual_talk_1",
+          "individual_donate_1"
+        ]
+      },
+      "donation_ams": {
+        "kind": "single",
+        "components": [
+          "donation"
+        ]
+      },
+      "newsletter_signup": {
+        "kind": "recode",
+        "note": "Yes -> 1, No -> 0",
+        "components": [
+          "newsletter"
+        ]
+      }
+    },
+    "all_constructed_in_cleaning": [
+      {
+        "target_label": "age_band",
+        "definition": "Age band, cut from age = 2026 − year_birth"
+      },
+      {
+        "target_label": "funding_perceptions",
+        "definition": "Reverse of funding_5: 100 − funding_5 (higher = perceives funding too low / supports more funding)"
+      },
+      {
+        "target_label": "newsletter_signup",
+        "definition": "Recode of newsletter: Yes→1, No→0"
+      },
+      {
+        "target_label": "trust_competence",
+        "definition": "Mean of trust_competence_1..3"
+      },
+      {
+        "target_label": "trust_integrity",
+        "definition": "Mean of trust_integrity_1..3"
+      },
+      {
+        "target_label": "trust_benevolence",
+        "definition": "Mean of trust_benevolence_1..3"
+      },
+      {
+        "target_label": "trust_openness",
+        "definition": "Mean of trust_openness_1..3"
+      },
+      {
+        "target_label": "trust_multidimensional",
+        "definition": "PRIMARY OUTCOME. Mean of the four trust subscales (competence, integrity, benevolence, openness)"
+      },
+      {
+        "target_label": "policy_role_mean",
+        "definition": "Mean of policy_role_1..4"
+      },
+      {
+        "target_label": "inst_trust_mean",
+        "definition": "Mean of inst_trust_epa/nasa/noaa/universities/federal_gov"
+      },
+      {
+        "target_label": "concern_mean",
+        "definition": "Mean of concern_1..3"
+      },
+      {
+        "target_label": "policy_specific_mean",
+        "definition": "Mean of policy_specific_1..7"
+      },
+      {
+        "target_label": "behavior_mean",
+        "definition": "Mean of behavior_meat/transport/solar/fly/talk/donate"
+      }
+    ]
+  }
+}
